@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param now
+#' @param output.dir
+#' @param tipo
+#' @param data
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write.nowcasting <- function(now,
                             output.dir,
                             tipo = "covid", # covid, srag, obitos_covid, obitos_srag

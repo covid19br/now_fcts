@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param dados
+#' @param output.dir
+#' @param tipo
+#' @param data
+#'
+#' @return
+#' @export
+#'
+#' @examples
 write.notificacoes.data <- function(dados,
                                     output.dir,
                                     tipo = "covid", # covid, srag, obitos_covid, obitos_srag

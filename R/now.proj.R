@@ -2,9 +2,11 @@
 ## Funcao para projecao do n acumulado de casos por data do sintoma
 ################################################################################
 #' Funcao para projecao do n acumulado de casos por data do sintoma
+#'
 #' @param pred Data frame. Objeto `now.pred.zoo` gerado em prepara_nowcasting.R
 #' @param pred.original Data frame. Objeto `now.pred.original` gerado em prepara_nowcasting.R
-#' @param now.lista Lista. Objeto `now.lista` gerado em prepara_dados_nowcasting.R
+#' @param n.dias
+#' @param data
 #' @param now.params.post Data frame. Objeto `now.params.post` gerado em gerado em prepara_dados_nowcasting.R
 now.proj <- function(pred,
                      pred.original,

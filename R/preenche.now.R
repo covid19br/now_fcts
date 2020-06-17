@@ -5,6 +5,7 @@
 #'     definidos por esses argumentos. Esta função preenche os dias
 #'     anteriores com os valores de um outro vetor, normalmente o
 #'     vetor de n de casos observado
+#'
 #' @param vetor.now vetor com número de casos estimados pelo
 #'     nowcasting, com NAs nas datas para as quais não há estimativas.
 #' @param vetor.casos vetor com numero de casos o observados. Deve ter

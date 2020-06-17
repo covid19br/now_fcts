@@ -1,4 +1,17 @@
 # funcao para gerar tabelas que vao para o site
+#' Title
+#'
+#' @param output.dir
+#' @param tipo
+#' @param df.cum
+#' @param df.td
+#' @param df.re
+#' @param data_base
+#'
+#' @return
+#' @export
+#'
+#' @examples
 tabelas.web <- function(output.dir,
                         tipo,
                         df.cum, # data frame com os casos acumulados

@@ -12,8 +12,6 @@ now.proj(pred, pred.original, now.params.post, n.dias = 5, data)
 \item{pred.original}{Data frame. Objeto \code{now.pred.original} gerado em prepara_nowcasting.R}
 
 \item{now.params.post}{Data frame. Objeto \code{now.params.post} gerado em gerado em prepara_dados_nowcasting.R}
-
-\item{now.lista}{Lista. Objeto \code{now.lista} gerado em prepara_dados_nowcasting.R}
 }
 \description{
 Funcao para projecao do n acumulado de casos por data do sintoma

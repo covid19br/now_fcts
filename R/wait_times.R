@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param n
+#' @param fit
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 rwaittime = function(n, fit){
   mu = fixef(fit)[1,"Estimate"]
   shape = mean(as.data.frame(fit)$shape)
@@ -5,6 +15,16 @@ rwaittime = function(n, fit){
   rweibull(n, shape = shape, scale = lambda)
 }
 
+#' Title
+#'
+#' @param n
+#' @param age
+#' @param fit
+#'
+#' @return
+#' @export
+#'
+#' @examples
 rwaittime_posterior_age = function(n, age, fit){
   model_matrix = as.matrix(fit)
   x = model_matrix[1,]
@@ -18,6 +38,16 @@ rwaittime_posterior_age = function(n, age, fit){
   })
 }
 
+#' Title
+#'
+#' @param n
+#' @param age
+#' @param fit
+#'
+#' @return
+#' @export
+#'
+#' @examples
 rwaittime_age = function(n, age, fit){
   mu = coef(fit)$age_class[age,"Estimate","Intercept"]
   shape = summary(fit)$spec_pars[1]

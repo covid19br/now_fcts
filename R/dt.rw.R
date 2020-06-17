@@ -4,10 +4,12 @@
 #'     série. Retorna um objeto de série temporal com os valores dos
 #'     tempos de duplicação em cada janela e seus intervalos de
 #'     confiança
+#'
 #' @param zoo.obj objeto da classe 'zoo' com uma serie temporal
 #'     univariada (n de casos)
 #' @param window.width largura da janela (em unidades de tempo da
 #'     serie temporal, em geral dias)
+#' @export
 dt.rw <- function(zoo.obj, window.width){
     if(class(zoo.obj)!="zoo"|!is.null(dim(zoo.obj)))
         stop("'zoo.obj' deve ser um objeto da classe zoo com uma única variável")

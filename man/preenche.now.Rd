@@ -18,9 +18,9 @@ Preenche NA's iniciais do vetor de estimado pelo nowcasting
 }
 \details{
 O nowcasting retornado pela função NobBS usado com janela
-    (argumento 'moving_window') ou limite máximo de atraso
-    (argumento 'max_D') produz estimativas para os últimos dias,
-    definidos por esses argumentos. Esta função preenche os dias
-    anteriores com os valores de um outro vetor, normalmente o
-    vetor de n de casos observado
+(argumento 'moving_window') ou limite máximo de atraso
+(argumento 'max_D') produz estimativas para os últimos dias,
+definidos por esses argumentos. Esta função preenche os dias
+anteriores com os valores de um outro vetor, normalmente o
+vetor de n de casos observado
 }

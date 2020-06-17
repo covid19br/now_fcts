@@ -1,3 +1,13 @@
+#' Função para gerar nowcasting
+#' @param dados dados
+#'
+#' @param caso Lógico. Se TRUE faz casos e FALSE, óbitos
+#' @param tipo covid ou srag
+#' @param hospitalizados Lógico, filtra apenas hospitalizados
+#' @param trim.now corte para nowcasting
+#' @param window janela para nowcasting
+#'
+#' @export
 gera.nowcasting <- function(dados, # dados
                             caso = TRUE, # caso = FALSE faz obitos
                             tipo, # covid ou srag

@@ -1,4 +1,12 @@
 #' Forecast usando regressão Poisson sobre série dos casos acumulados
+#'
+#' @param zoo.obj objeto zoo
+#' @param start inicio
+#' @param end fim
+#' @param days.forecast datas previsão
+#' @param ...
+#'
+#' @export
 forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.forecast, ...){
     if(class(zoo.obj)!="zoo"|!is.null(dim(zoo.obj)))
         stop("'zoo.obj' deve ser um objeto da classe zoo com uma única variável")

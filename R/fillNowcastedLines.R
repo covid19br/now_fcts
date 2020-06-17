@@ -1,5 +1,18 @@
-## Using Nowcast and survival analysis to complete covid table with unobserved cases
-fillNowcastedLines = function(df, nowcast, hosp_wait_fit, int_wait_fit, 
+#' Using Nowcast and survival analysis to complete covid table with unobserved cases
+#'
+#' @param df foo
+#' @param nowcast foo
+#' @param hosp_wait_fit foo
+#' @param int_wait_fit foo
+#' @param UTI_stay_wait_fit foo
+#' @param UTI_after_wait_fit foo
+#' @param prob_UTI foo
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+fillNowcastedLines <- function(df, nowcast, hosp_wait_fit, int_wait_fit,
                               UTI_stay_wait_fit, UTI_after_wait_fit, prob_UTI, ...){
   df.now_casted = dplyr::select(df, dt_sin, dt_int, dt_evo, UTI, dt_entuti, dt_saiuti, age_class)
   nowcasts = data.frame(nowcast$estimates)
@@ -14,11 +27,11 @@ fillNowcastedLines = function(df, nowcast, hosp_wait_fit, int_wait_fit,
     missing[missing < 0] = 0
     names(missing) = current_now_cast$stratum
     n_missing = sum(missing, na.rm = TRUE)
-    new.df = data.frame(dt_sin    = as.Date(rep("1859-11-24", n_missing)), 
-                        dt_int    = as.Date(rep("1859-11-24", n_missing)), 
-                        dt_evo    = as.Date(rep("1859-11-24", n_missing)), 
-                        UTI       = as.numeric(rep(NA, n_missing)), 
-                        dt_entuti = as.Date(rep("1859-11-24", n_missing)), 
+    new.df = data.frame(dt_sin    = as.Date(rep("1859-11-24", n_missing)),
+                        dt_int    = as.Date(rep("1859-11-24", n_missing)),
+                        dt_evo    = as.Date(rep("1859-11-24", n_missing)),
+                        UTI       = as.numeric(rep(NA, n_missing)),
+                        dt_entuti = as.Date(rep("1859-11-24", n_missing)),
                         dt_saiuti = as.Date(rep("1859-11-24", n_missing)),
                         age_class = as.character(rep("OOS", n_missing)), stringsAsFactors = F)
     ll = 1
@@ -53,7 +66,7 @@ fillNowcastedLines = function(df, nowcast, hosp_wait_fit, int_wait_fit,
 }
 
 # df = covid.dt
-# nowcast = covid.now.day 
+# nowcast = covid.now.day
 # hosp_wait_fit = time_fits1$covid$notUTI
 # int_wait_fit = time_fits0$covid$Int
 # UTI_stay_wait_fit = time_fits0$covid$UTI
@@ -61,7 +74,7 @@ fillNowcastedLines = function(df, nowcast, hosp_wait_fit, int_wait_fit,
 # prob_UTI = probsFits$covid$uti[,"Estimate"]
 
 ## Using Nowcast and survival analysis to complete covid table with unobserved cases
-fillNowcastedLinesFast = function(df, nowcast, hosp_wait_fit, int_wait_fit, 
+fillNowcastedLinesFast = function(df, nowcast, hosp_wait_fit, int_wait_fit,
                               UTI_stay_wait_fit, UTI_after_wait_fit, prob_UTI, ...){
   df.now_casted = dplyr::select(df, dt_sin, dt_int, dt_evo, UTI, dt_entuti, dt_saiuti, age_class)
   nowcasts = data.frame(nowcast$estimates)
@@ -76,11 +89,11 @@ fillNowcastedLinesFast = function(df, nowcast, hosp_wait_fit, int_wait_fit,
     missing[missing < 0] = 0
     names(missing) = current_now_cast$stratum
     n_missing = sum(missing, na.rm = TRUE)
-    new.df = data.frame(dt_sin    = as.Date(rep("1859-11-24", n_missing)), 
-                        dt_int    = as.Date(rep("1859-11-24", n_missing)), 
-                        dt_evo    = as.Date(rep("1859-11-24", n_missing)), 
-                        UTI       = as.numeric(rep(NA, n_missing)), 
-                        dt_entuti = as.Date(rep("1859-11-24", n_missing)), 
+    new.df = data.frame(dt_sin    = as.Date(rep("1859-11-24", n_missing)),
+                        dt_int    = as.Date(rep("1859-11-24", n_missing)),
+                        dt_evo    = as.Date(rep("1859-11-24", n_missing)),
+                        UTI       = as.numeric(rep(NA, n_missing)),
+                        dt_entuti = as.Date(rep("1859-11-24", n_missing)),
                         dt_saiuti = as.Date(rep("1859-11-24", n_missing)),
                         age_class = as.character(rep("OOS", n_missing)), stringsAsFactors = F)
     ll = 1
@@ -92,15 +105,15 @@ fillNowcastedLinesFast = function(df, nowcast, hosp_wait_fit, int_wait_fit,
         new.df$dt_int[current_lines] = as.Date(new.df$dt_sin[ll] + rwaittime(to_add[current_age], int_wait_fit))
         new.df$dt_evo[current_lines] = as.Date(new.df$dt_int[current_lines] + rwaittime_age(to_add[current_age], current_age, hosp_wait_fit))
         new.df$UTI[current_lines] = as.numeric(rbernoulli(to_add[current_age], prob_UTI[age_table$ID == current_age]))
-        new.df$dt_entuti[current_lines] = if_else(as.logical(new.df$UTI[current_lines]), 
-                                                  as.Date(new.df$dt_int[current_lines] + 1), 
+        new.df$dt_entuti[current_lines] = if_else(as.logical(new.df$UTI[current_lines]),
+                                                  as.Date(new.df$dt_int[current_lines] + 1),
                                                   NA_Date_)
-        new.df$dt_saiuti[current_lines] = if_else(as.logical(new.df$UTI[current_lines]), 
-                                                  as.Date(new.df$dt_entuti[current_lines] + 
-                                                            rwaittime(to_add[current_age], UTI_stay_wait_fit)), 
+        new.df$dt_saiuti[current_lines] = if_else(as.logical(new.df$UTI[current_lines]),
+                                                  as.Date(new.df$dt_entuti[current_lines] +
+                                                            rwaittime(to_add[current_age], UTI_stay_wait_fit)),
                                                   NA_Date_)
-        new.df$dt_evo[current_lines] = if_else(as.logical(new.df$UTI[current_lines]), 
-                                               as.Date(new.df$dt_saiuti[current_lines] + rwaittime(to_add[current_age], UTI_after_wait_fit) - 1), 
+        new.df$dt_evo[current_lines] = if_else(as.logical(new.df$UTI[current_lines]),
+                                               as.Date(new.df$dt_saiuti[current_lines] + rwaittime(to_add[current_age], UTI_after_wait_fit) - 1),
                                                new.df$dt_evo[current_lines])
         new.df$UTI[current_lines] = if_else(as.logical(new.df$UTI[current_lines]), 1, 2)
         new.df$age_class[current_lines] = as.character(current_age)

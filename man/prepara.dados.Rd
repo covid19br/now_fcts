@@ -7,7 +7,7 @@
 prepara.dados(tipo = "covid", data.base, output.dir = output.dir)
 }
 \arguments{
-\item{tipo}{Caractere. Nome da base de dados para preparar. Tipos possíveis: `covid` para casos de COVID-19, `srag` para casos de SRAG, `obitos_covid` para óbitos por COVID-19 e `obitos_srag` para óbitos por SRAG}
+\item{tipo}{Caractere. Nome da base de dados para preparar. Tipos possíveis: \code{covid} para casos de COVID-19, \code{srag} para casos de SRAG, \code{obitos_covid} para óbitos por COVID-19 e \code{obitos_srag} para óbitos por SRAG}
 }
 \description{
 Função para automatizar a preparação dos dados de nowcasting por unidade administrativa

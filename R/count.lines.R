@@ -1,5 +1,8 @@
 #' Conta número de linhas de um arquivo de texto, zipado ou bzipado ou xzeado
+#'
 #' @param filename Caractere. Caminho do arquivo
+#'
+#' @export
 count.lines <- function(filename){
     if (endsWith(filename, 'csv'))
         return(as.integer(system2('wc',

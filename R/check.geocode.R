@@ -1,7 +1,11 @@
 #' Função para extrair nome do path a partir do geocode
+#'
 #' @param escala Caractere. Escala do filtro: `"municipio`, `"estado"`, `"micro"`, `"meso"`
+#' @param sigla Sigla do estado
+#' @param nonascii Lógico. Se TRUE retorna nome sem caracteres ascii
 #' @param geocode Caractere. Geocode IBGE. Município 6 ou 7 dígitos; microrregião 5 dígitos; mesorregião 4 dígitos; estado 2 dígitos
-
+#'
+#' @export
 check.geocode <- function(escala,
                           geocode,
                           sigla,

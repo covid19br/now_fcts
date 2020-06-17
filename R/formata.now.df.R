@@ -1,5 +1,11 @@
-## Funcao para formatar data.frame para o grafico de nowcasting casos diarios e acumulados
-formata.now.df <- function(now.pred.zoo, 
+#' Funcao para formatar data.frame para o grafico de nowcasting casos diarios e acumulados
+#' @param now.pred.zoo previstos
+#'
+#' @param now.proj.zoo projetado
+#' @param lista lista
+#'
+#' @export
+formata.now.df <- function(now.pred.zoo,
                            now.proj.zoo,
                            lista) { # aceita "caso" para casos diarios ou "cum" para acumulados
     # Helper function
@@ -33,10 +39,10 @@ formata.now.df <- function(now.pred.zoo,
         full_join(., df.pred[, c('data', 'lower.merged.pred', 'upper.merged.pred')]) %>%
         mutate(data = as.Date(data))
     # PARA O PLOT CASOS ACUMULADOS
-    select.cols <- c("data", 
-                     'now.mean.c', 
+    select.cols <- c("data",
+                     'now.mean.c',
                      'now.mean.c.proj', 'now.low.c.proj', 'now.upp.c.proj',
-                     'not.mean.c', 
+                     'not.mean.c',
                      'not.mean.c.proj', 'not.low.c.proj', 'not.upp.c.proj')
     # estimados
     df.cum1 <- as.data.frame(window(now.proj.zoo, end = max(time(now.pred.zoo))))
@@ -46,7 +52,7 @@ formata.now.df <- function(now.pred.zoo,
     names(df.cum2) <- paste0(names(df.cum2), ".proj")
     df.cum2$data <- row.names(df.cum2)
     # gera o df para casos acumulados
-    df.cum <- full_join(df.cum1, 
+    df.cum <- full_join(df.cum1,
                         df.cum2) %>%
         select(select.cols) %>%
         mutate(data = as.Date(data)) %>%

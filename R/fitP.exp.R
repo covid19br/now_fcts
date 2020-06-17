@@ -6,12 +6,12 @@
 #'     Poisson tem função de ligação log, equivale a ajustar uma
 #'     função de crescimento exponencial às contagens, mas com erro
 #'     não gaussianos e sim Poisson.
+#'
 #' @param zoo.obj objeto da classe zoo com série temporal univariada
-#' @param family nome da distribuição de erros a usar no modelo linear
-#'     (ver ajuda em stats::family)
 #' @param only.coef se TRUE a função retorna um vetor coms
 #'     coeficientes da regressão e seus intervalos de confiança. Se
 #'     FALSE retorna o objeto do modelo ajustado, da classe glm.
+#' @export
 fitP.exp <- function(zoo.obj, only.coef = TRUE){
     ## Nao funciona com rollaply
     ## if(class(zoo.obj)!="zoo"|!is.null(ncol(zoo.obj)))

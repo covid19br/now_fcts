@@ -16,13 +16,13 @@ posteriores dos parâmetros estimados pela função NobBS. Está
 contido na lista que é retornada pela função.}
 }
 \value{
-data frame com média e quantis 2.5% e 97.5% das
-    distribuições a posteriori dos parâmetros de atraso de
-    notificação pelo método de nowcasting da função NobBS. Os
-    valores estão convertidos para escala de probabilidade, e
-    portanto podem ser interpretado como a probabilidade de um caso
-    ser notificado D dias após o dias o primeiro sintoma, sendo que
-    vai de zero ao máximo definido pelos argumentos do nowcasting
+data frame com média e quantis 2.5\% e 97.5\% das
+distribuições a posteriori dos parâmetros de atraso de
+notificação pelo método de nowcasting da função NobBS. Os
+valores estão convertidos para escala de probabilidade, e
+portanto podem ser interpretado como a probabilidade de um caso
+ser notificado D dias após o dias o primeiro sintoma, sendo que
+vai de zero ao máximo definido pelos argumentos do nowcasting
 }
 \description{
 Médias e ICs das probabilidades de notificação a cada dia

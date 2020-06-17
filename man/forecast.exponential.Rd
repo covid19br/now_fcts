@@ -6,6 +6,17 @@
 \usage{
 forecast.exponential(zoo.obj, start, end = length(zoo.obj), days.forecast, ...)
 }
+\arguments{
+\item{zoo.obj}{objeto zoo}
+
+\item{start}{inicio}
+
+\item{end}{fim}
+
+\item{days.forecast}{datas previsão}
+
+\item{...}{}
+}
 \description{
 Forecast usando regressão Poisson sobre série dos casos acumulados
 }

@@ -1,3 +1,10 @@
+#' Pega a data mais recente da base de dados
+#'
+#' @param dir diretorio
+#'
+#' @return
+#' @export
+#'
 get.last.date <- function(dir) {
   data.base <- list.files(dir) %>%
     # regex para catar data

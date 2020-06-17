@@ -1,3 +1,7 @@
+#' Title
+#' @param df data.frame
+#'
+#' @export
 countByAgeClass = function(df){
   out = data.frame(0, 0, 0, 0, 0, 0, 0, 0, 0)
   colnames(out) = age_table$ID

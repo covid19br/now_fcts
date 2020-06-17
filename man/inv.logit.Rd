@@ -2,10 +2,16 @@
 % Please edit documentation in R/inv.logit.R
 \name{inv.logit}
 \alias{inv.logit}
-\title{Inverso da funcao logito}
+\title{Inverso da logit}
 \usage{
 inv.logit(x)
 }
+\arguments{
+\item{x}{vector}
+}
+\value{
+
+}
 \description{
-Inverso da funcao logito
+Inverso da logit
 }

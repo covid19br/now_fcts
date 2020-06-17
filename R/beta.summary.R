@@ -1,4 +1,5 @@
 #' Médias e ICs das probabilidades de notificação a cada dia
+#'
 #' @param NobBS.output objeto retornado pela função NobBS do pacote de
 #'     mesmo nome Este argumento é ignorado se o argumento
 #'     NobBS.params.post é usado.
@@ -12,6 +13,7 @@
 #'     portanto podem ser interpretado como a probabilidade de um caso
 #'     ser notificado D dias após o dias o primeiro sintoma, sendo que
 #'     vai de zero ao máximo definido pelos argumentos do nowcasting
+#' @export
 beta.summary <- function(NobBS.output, NobBS.params.post){
     if (missing(NobBS.params.post))
         df <- NobBS.output$params.post

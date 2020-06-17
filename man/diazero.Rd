@@ -7,16 +7,15 @@
 diazero(zoo.obj, limite)
 }
 \arguments{
-\item{zoo.obj:}{objeto da classe zoo, com a série temporal}
+\item{zoo.obj}{objeto da classe zoo}
 
-\item{valor}{limite para iniciar a série. Todas as datas anteriores
-à primeira ocorrência desse valor serão retiradas da série.}
+\item{limite}{limite para corte}
 }
 \description{
 Corta uma série temporal no dia zero.
 }
 \details{
 Esta função corta um objeto da classe zoo, tirando todos
-    os valores anteriores ao primeiro valor igual a um certo limite
-    (n.casos).
+os valores anteriores ao primeiro valor igual a um certo limite
+(n.casos).
 }

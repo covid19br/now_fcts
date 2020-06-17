@@ -13,9 +13,6 @@ fitP.exp(zoo.obj, only.coef = TRUE)
 \item{only.coef}{se TRUE a função retorna um vetor coms
 coeficientes da regressão e seus intervalos de confiança. Se
 FALSE retorna o objeto do modelo ajustado, da classe glm.}
-
-\item{family}{nome da distribuição de erros a usar no modelo linear
-(ver ajuda em stats::family)}
 }
 \description{
 Ajusta um modelo exponencial para n de casos em função de n de dias
@@ -23,9 +20,9 @@ passados desde o início da série.
 }
 \details{
 Ajusta um modelo generalizado misto para contagens
-    (Poisson) dos valores de uma série temporal em função do número
-    de dias transcorridos desde o início da série. Como o modelo
-    Poisson tem função de ligação log, equivale a ajustar uma
-    função de crescimento exponencial às contagens, mas com erro
-    não gaussianos e sim Poisson.
+(Poisson) dos valores de uma série temporal em função do número
+de dias transcorridos desde o início da série. Como o modelo
+Poisson tem função de ligação log, equivale a ajustar uma
+função de crescimento exponencial às contagens, mas com erro
+não gaussianos e sim Poisson.
 }

@@ -18,8 +18,8 @@ Tempo de duplicação ao longo de uma serie temporal de n de casos
 }
 \details{
 Toma uma série temporal de n de casos, ajusta a função
-    fitP.exp a 'running windows' de n de dias fixo ao longo da
-    série. Retorna um objeto de série temporal com os valores dos
-    tempos de duplicação em cada janela e seus intervalos de
-    confiança
+fitP.exp a 'running windows' de n de dias fixo ao longo da
+série. Retorna um objeto de série temporal com os valores dos
+tempos de duplicação em cada janela e seus intervalos de
+confiança
 }

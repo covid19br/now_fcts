@@ -2,19 +2,13 @@
 % Please edit documentation in R/wait_times.R
 \name{rwaittime}
 \alias{rwaittime}
-\title{Title}
+\title{rwaittime}
 \usage{
 rwaittime(n, fit)
 }
 \arguments{
 \item{fit}{}
 }
-\value{
-
-}
 \description{
-Title
-}
-\examples{
-
+rwaittime
 }

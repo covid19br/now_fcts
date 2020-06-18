@@ -1,12 +1,9 @@
-# Funcao para plot do R efetivo
-#' Title
+#' Funcao para plot do R efetivo
 #'
 #' @param df.re
 #'
-#' @return
 #' @export
 #'
-#' @examples
 plot.estimate.R0 <- function(df.re) { # df com r efetivo
     plot <- df.re %>%
         mutate(data = as.Date(data)) %>%

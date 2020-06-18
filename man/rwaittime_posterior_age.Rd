@@ -2,16 +2,13 @@
 % Please edit documentation in R/wait_times.R
 \name{rwaittime_posterior_age}
 \alias{rwaittime_posterior_age}
-\title{Title}
+\title{rwaittime_posterior_age}
 \usage{
 rwaittime_posterior_age(n, age, fit)
 }
 \arguments{
 \item{fit}{}
 }
-\value{
-
-}
 \description{
-Title
+rwaittime_posterior_age
 }

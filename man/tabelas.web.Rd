@@ -9,9 +9,6 @@ tabelas.web(output.dir, tipo, df.cum, df.td, df.re = NULL, data_base)
 \arguments{
 \item{data_base}{}
 }
-\value{
-
-}
 \description{
 Title
 }

@@ -2,16 +2,13 @@
 % Please edit documentation in R/makeNamedList.R
 \name{makeNamedList}
 \alias{makeNamedList}
-\title{Title}
+\title{makeNamedList}
 \usage{
 makeNamedList(...)
 }
 \arguments{
 \item{...}{}
 }
-\value{
-
-}
 \description{
-Title
+makeNamedList
 }

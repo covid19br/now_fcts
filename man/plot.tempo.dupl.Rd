@@ -9,9 +9,6 @@
 \arguments{
 \item{df.td}{}
 }
-\value{
-
-}
 \description{
 Title
 }

@@ -1,12 +1,9 @@
-# Funcao para fazer plot nowcast de casos diarios (notificado e nowcasting), com linha de tendencia atenuada e IC
-#' Title
+#' Funcao para fazer plot nowcast de casos diarios (notificado e nowcasting), com linha de tendencia atenuada e IC
 #'
 #' @param df
 #'
-#' @return
 #' @export
 #'
-#' @examples
 plot.nowcast.diario <- function(df) {
     plot <- df %>%
         mutate(data = as.Date(data)) %>%

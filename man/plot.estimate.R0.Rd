@@ -2,16 +2,13 @@
 % Please edit documentation in R/plot.estimate.R0.R
 \name{plot.estimate.R0}
 \alias{plot.estimate.R0}
-\title{Title}
+\title{Funcao para plot do R efetivo}
 \usage{
 \method{plot}{estimate.R0}(df.re)
 }
 \arguments{
 \item{df.re}{}
 }
-\value{
-
-}
 \description{
-Title
+Funcao para plot do R efetivo
 }

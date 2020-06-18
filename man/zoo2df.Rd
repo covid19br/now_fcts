@@ -2,16 +2,13 @@
 % Please edit documentation in R/zoo2df.R
 \name{zoo2df}
 \alias{zoo2df}
-\title{Title}
+\title{zoo2df}
 \usage{
 zoo2df(zoo)
 }
 \arguments{
-\item{zoo}{}
-}
-\value{
-
+\item{zoo}{a zoo object}
 }
 \description{
-Title
+zoo2df
 }

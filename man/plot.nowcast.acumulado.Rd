@@ -2,16 +2,13 @@
 % Please edit documentation in R/plot.nowcast.acumulado.R
 \name{plot.nowcast.acumulado}
 \alias{plot.nowcast.acumulado}
-\title{Title}
+\title{Funcao para fazer o plot de nowcasting acumulado, com valores estimados e notificados, com projecao para os proximos 5 dias}
 \usage{
 \method{plot}{nowcast.acumulado}(df)
 }
 \arguments{
 \item{df}{}
 }
-\value{
-
-}
 \description{
-Title
+Funcao para fazer o plot de nowcasting acumulado, com valores estimados e notificados, com projecao para os proximos 5 dias
 }

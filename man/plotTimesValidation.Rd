@@ -2,19 +2,13 @@
 % Please edit documentation in R/plotTimesValidation.R
 \name{plotTimesValidation}
 \alias{plotTimesValidation}
-\title{Title}
+\title{plotTimesValidation}
 \usage{
 plotTimesValidation(times_table, fit1, age = TRUE)
 }
 \arguments{
 \item{age}{}
 }
-\value{
-
-}
 \description{
-Title
-}
-\examples{
-
+plotTimesValidation
 }

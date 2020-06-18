@@ -1,15 +1,11 @@
-# funcao para converter zoo em df
-## srm não se dá bem com zoo e write.zoo
-#' Title
+#' zoo2df
 #'
-#' @param zoo
+#' @param zoo a zoo object
 #'
-#' @return
 #' @export
 #'
-#' @examples
 zoo2df <- function(zoo) {
   df <- as.data.frame(zoo)
-  df$data <- as.Date(row.names(df))
+  df$data <- zoo::as.Date(row.names(df))
   return(df)
 }

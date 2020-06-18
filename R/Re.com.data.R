@@ -7,7 +7,7 @@
 Re.com.data <- function(ncasos, datas, dia0 = min(datas), delay = 5) {
     if (length(ncasos) != length(datas)) stop("ncasos e ndatas devem ter o mesmo comprimento")
     day0 <- min(which(datas >= dia0, arr.ind=TRUE))
-    if(day0 < delay)
+    if (day0 < delay)
         day0 = delay + 1
     Re <- estimate.R0(as.integer(na.zero(ncasos)), day0 = day0, delay = delay)
     names(Re$R) <- gsub("\\(R\\)", ".R", names(Re$R))

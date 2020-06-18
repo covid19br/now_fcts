@@ -3,10 +3,8 @@
 #'
 #' @param df.td
 #'
-#' @return
 #' @export
 #'
-#' @examples
 plot.tempo.dupl <- function(df.td) {#data.frame com tempo de duplicacao
     plot <- df.td %>%
         mutate(data = as.Date(data)) %>%

@@ -5,15 +5,14 @@
 #' @param tipo
 #' @param data
 #'
-#' @return
+#' @importFrom dplyr group_by summarise
+#' @importFrom utils write.csv
 #' @export
 #'
-#' @examples
 write.notificacoes.data <- function(dados,
                                     output.dir,
                                     tipo = "covid", # covid, srag, obitos_covid, obitos_srag
-                                    data
-                                    ) {
+                                    data) {
 
   obitos <- c("obitos_covid", "obitos_srag")
 

@@ -9,9 +9,6 @@ write.notificacoes.data(dados, output.dir, tipo = "covid", data)
 \arguments{
 \item{data}{}
 }
-\value{
-
-}
 \description{
 Title
 }

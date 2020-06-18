@@ -2,16 +2,13 @@
 % Please edit documentation in R/makeHospitalTable.R
 \name{makeHospitalTable}
 \alias{makeHospitalTable}
-\title{Title}
+\title{makeHospitalTable}
 \usage{
 makeHospitalTable(df.table, dates, UTI = FALSE)
 }
 \arguments{
 \item{UTI}{}
 }
-\value{
-
-}
 \description{
-Title
+makeHospitalTable
 }

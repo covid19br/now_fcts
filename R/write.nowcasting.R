@@ -1,19 +1,17 @@
-#' Title
+#' Writes nowcasting
 #'
 #' @param now
 #' @param output.dir
 #' @param tipo
 #' @param data
 #'
-#' @return
+#' @importFrom utils write.csv
 #' @export
 #'
-#' @examples
 write.nowcasting <- function(now,
-                            output.dir,
-                            tipo = "covid", # covid, srag, obitos_covid, obitos_srag
-                            data
-                            ) { # objeto com output dos nowcastings
+                             output.dir,
+                             tipo = "covid",
+                             data) {
 
   nome.now.df <- paste0(output.dir, "nowcasting_", tipo, "_previstos_", data, ".csv")
   write.csv(now$estimates,

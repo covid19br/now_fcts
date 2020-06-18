@@ -2,7 +2,7 @@
 % Please edit documentation in R/NobBS.posterior.R
 \name{NobBS.posterior}
 \alias{NobBS.posterior}
-\title{Title}
+\title{NobBS.posterior}
 \usage{
 NobBS.posterior(
   data,
@@ -22,11 +22,28 @@ NobBS.posterior(
 )
 }
 \arguments{
-\item{specs}{}
-}
-\value{
+\item{data}{data}
 
+\item{now}{now}
+
+\item{units}{units}
+
+\item{onset_date}{onset_date}
+
+\item{report_date}{report_date}
+
+\item{moving_window}{moving_window}
+
+\item{max_D}{max_D}
+
+\item{cutoff_D}{cutoff_D}
+
+\item{proportion_reported}{proportion_reported}
+
+\item{quiet}{quiet}
+
+\item{specs}{specs}
 }
 \description{
-Title
+NobBS.posterior
 }

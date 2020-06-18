@@ -1,12 +1,9 @@
-# Funcao para fazer o plot de nowcasting acumulado, com valores estimados e notificados, com projecao para os proximos 5 dias
-#' Title
+#' Funcao para fazer o plot de nowcasting acumulado, com valores estimados e notificados, com projecao para os proximos 5 dias
 #'
 #' @param df
 #'
-#' @return
 #' @export
 #'
-#' @examples
 plot.nowcast.acumulado <- function(df){
     plot <- df %>%
         mutate(data = as.Date(data)) %>%

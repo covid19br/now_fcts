@@ -8,10 +8,9 @@
 #' @param df.re
 #' @param data_base
 #'
-#' @return
+#' @importFrom utils write.table
 #' @export
 #'
-#' @examples
 tabelas.web <- function(output.dir,
                         tipo,
                         df.cum, # data frame com os casos acumulados

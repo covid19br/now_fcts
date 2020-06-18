@@ -10,7 +10,8 @@ gera.nowcasting(
   tipo,
   hospitalizados = TRUE,
   trim.now,
-  window
+  window,
+  trajectories = FALSE
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ gera.nowcasting(
 \item{trim.now}{corte para nowcasting}
 
 \item{window}{janela para nowcasting}
+
+\item{trajectories}{Lógico. Retorna trajetórias}
 }
 \description{
 Função para gerar nowcasting

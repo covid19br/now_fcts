@@ -1,13 +1,15 @@
 #' Função para gerar nowcasting
-#' @param dados dados
 #'
+#' @param dados dados
 #' @param caso Lógico. Se TRUE faz casos e FALSE, óbitos
 #' @param tipo covid ou srag
 #' @param hospitalizados Lógico, filtra apenas hospitalizados
 #' @param trim.now corte para nowcasting
 #' @param window janela para nowcasting
+#' @param trajectories Lógico. Retorna trajetórias
 #'
 #' @export
+#'
 #' @importFrom stats dbinom
 #' @importFrom NobBS NobBS
 #' @importFrom dplyr filter select mutate
@@ -16,7 +18,10 @@ gera.nowcasting <- function(dados, # dados
                             tipo, # covid ou srag
                             hospitalizados = TRUE,
                             trim.now, # corte para nowcasting
-                            window) { # janela para nowcasting
+                            window, # # corte para nowcasting
+                            trajectories = FALSE) { # retorna trajetórias
+  if(trajectories)
+      NobBS  <- NobBS.posterior
   # 1. nowcasting de casos ###
   if (caso) {
       if (hospitalizados)

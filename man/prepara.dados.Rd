@@ -4,14 +4,21 @@
 \alias{prepara.dados}
 \title{Função para automatizar a preparação dos dados de nowcasting por unidade administrativa}
 \usage{
-prepara.dados(tipo = "covid", data.base, output.dir = output.dir)
+prepara.dados(
+  tipo = "covid",
+  data.base,
+  output.dir = output.dir,
+  trajectories = FALSE
+)
 }
 \arguments{
 \item{tipo}{Caractere. Nome da base de dados para preparar. Tipos possíveis: \code{covid} para casos de COVID-19, \code{srag} para casos de SRAG, \code{obitos_covid} para óbitos por COVID-19 e \code{obitos_srag} para óbitos por SRAG}
 
-\item{data.base}{data.base}
+\item{data.base}{data}
 
-\item{output.dir}{output.dir}
+\item{output.dir}{dir}
+
+\item{trajectories}{bool carregar trajetórias de projeções do nowcasting}
 }
 \description{
 Função para automatizar a preparação dos dados de nowcasting por unidade administrativa

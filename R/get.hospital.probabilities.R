@@ -1,9 +1,11 @@
-#' Title
+#' getProbUTI
 #'
 #' @param df data.frame
 #'
-#' @return
 #' @export
+#' @importFrom stats binomial
+#' @importFrom brms brm prior
+#' @importFrom stats coef
 #'
 getProbUTI = function(df){
   df.UTI = filter(df, !is.na(UTI) & UTI!=9)
@@ -21,8 +23,18 @@ getProbUTI = function(df){
   data.frame(out[,,"Intercept"])
 }
 
-# probabilidade de morte de hospitalizado comum, e em UTI,
-getProbDeath = function(df, UTI = FALSE){
+
+#' Probabilidade de morte de hospitalizado comum, e em UTI,
+#'
+#' @param df df
+#' @param UTI UTI
+#'
+#' @export
+#' @importFrom brms brm prior
+#' @importFrom stats binomial
+#' @importFrom dplyr filter
+#'
+getProbDeath <-  function(df, UTI = FALSE) {
   if(UTI){
     df.filtered = filter(df, UTI==1, !is.na(evolucao) & evolucao!=9)
   } else{

@@ -5,6 +5,8 @@
 #' @param lista lista
 #'
 #' @export
+#' @importFrom dplyr full_join mutate_all mutate select funs
+#' @importFrom stats window
 formata.now.df <- function(now.pred.zoo,
                            now.proj.zoo,
                            lista) { # aceita "caso" para casos diarios ou "cum" para acumulados

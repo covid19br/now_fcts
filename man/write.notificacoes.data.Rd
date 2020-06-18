@@ -7,7 +7,13 @@
 write.notificacoes.data(dados, output.dir, tipo = "covid", data)
 }
 \arguments{
-\item{data}{}
+\item{dados}{dados}
+
+\item{output.dir}{output.dir}
+
+\item{tipo}{tipo}
+
+\item{data}{data}
 }
 \description{
 Title

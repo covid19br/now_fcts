@@ -4,9 +4,11 @@
 #' Função para automatizar a preparação dos dados de nowcasting por unidade administrativa
 #' @details Retira datas dos sufixos dos nomes das bases e identifica a maior data. Só funciona se os nomes das bases forem mantidos no padrão
 #'
-#' @param data.base
-#' @param output.dir
 #' @param tipo Caractere. Nome da base de dados para preparar. Tipos possíveis: `covid` para casos de COVID-19, `srag` para casos de SRAG, `obitos_covid` para óbitos por COVID-19 e `obitos_srag` para óbitos por SRAG
+#' @param data.base data.base
+#' @param output.dir output.dir
+#'
+#' @importFrom stats window
 prepara.dados <- function(tipo = "covid",
                           data.base,
                           output.dir = output.dir) { # tipos possiveis: covid, srag, obitos_covid e obitos_srag

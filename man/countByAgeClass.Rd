@@ -2,13 +2,15 @@
 % Please edit documentation in R/countByAgeClass.R
 \name{countByAgeClass}
 \alias{countByAgeClass}
-\title{Title}
+\title{countByAgeClass}
 \usage{
-countByAgeClass(df)
+countByAgeClass(df, age_table = age_table)
 }
 \arguments{
 \item{df}{data.frame}
+
+\item{age_table}{age table}
 }
 \description{
-Title
+countByAgeClass
 }

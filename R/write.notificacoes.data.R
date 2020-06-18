@@ -1,9 +1,9 @@
 #' Title
 #'
-#' @param dados
-#' @param output.dir
-#' @param tipo
-#' @param data
+#' @param dados dados
+#' @param output.dir output.dir
+#' @param tipo tipo
+#' @param data data
 #'
 #' @importFrom dplyr group_by summarise
 #' @importFrom utils write.csv

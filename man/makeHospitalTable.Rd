@@ -7,7 +7,11 @@
 makeHospitalTable(df.table, dates, UTI = FALSE)
 }
 \arguments{
-\item{UTI}{}
+\item{df.table}{df.table}
+
+\item{dates}{dates}
+
+\item{UTI}{UTI}
 }
 \description{
 makeHospitalTable

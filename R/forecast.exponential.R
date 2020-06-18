@@ -4,12 +4,13 @@
 #' @param start inicio
 #' @param end fim
 #' @param days.forecast datas previsão
-#' @param ...
+#' @param ... ...
 #'
 #' @export
+#' @importFrom stats predict
 forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.forecast, ...){
     if(class(zoo.obj)!="zoo"|!is.null(dim(zoo.obj)))
-        stop("'zoo.obj' deve ser um objeto da classe zoo com uma única variável")
+        stop("'zoo.obj' deve ser um objeto da classe zoo com uma unica variavel")
     if(is.numeric(start))
         inicio <- time(zoo.obj)[start]
     else
@@ -20,7 +21,7 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
         fim <- end
     y <- window(zoo.obj, start = inicio, end = fim)
     if(!is.integer(y)) {
-        warning("Resposta não está em inteiros, convertendo para inteiro para ajustar glm Poisson")
+        warning("Resposta nao esta em inteiros, convertendo para inteiro para ajustar glm Poisson")
         y <- as.integer(y)
     }
     fit <- fitP.exp(y, only.coef = FALSE)

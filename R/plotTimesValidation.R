@@ -1,11 +1,13 @@
 #' plotTimesValidation
 #'
-#' @param times_table
-#' @param fit1
-#' @param age
+#' @param times_table times_table
+#' @param fit1 fit1
+#' @param age age
 #'
 #' @export
 #'
+#' @importFrom tidyr pivot_longer
+#' @importFrom cowplot theme_cowplot
 #'
 plotTimesValidation <-  function(times_table, fit1, age = TRUE) {
   if (age) {

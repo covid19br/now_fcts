@@ -1,12 +1,16 @@
 #' Função para ler base da sivep
 #'
 #' @param dir Caractere. Caminho relativo para o diretório onde está o dado
-#' @param escala Caractere. Escala de análise aceita: `"pais"`, `"estado"`, `"municipio"` #ö micro e meso um dia
+#' @param escala Caractere. Escala de análise aceita: `"pais"`, `"estado"`, `"municipio"`
 #' @param geocode Caractere. Geocode IBGE do estado ou município. Município pde ter 6 ou 7 dígitos
 #' @param data Caractere. Data no formato  "%Y_%m_%d". Quando NULL (padrão) pega a data mais recente
 #' @param residentes Filtar por residentes ou por local da notificação
-#' @param sigla
+#' @param sigla sigla UF
 #' @param ... Qualquer parâmetro de `read.csv()`
+#'
+#' @importFrom utils unzip count.fields
+#' @importFrom lubridate parse_date_time as_date
+
 read.sivep <- function(dir, # diretorio onde esta o dado
                        escala,
                        sigla,

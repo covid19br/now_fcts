@@ -7,7 +7,13 @@
 write.nowcasting(now, output.dir, tipo = "covid", data)
 }
 \arguments{
-\item{data}{}
+\item{now}{now}
+
+\item{output.dir}{output.dir}
+
+\item{tipo}{tipo}
+
+\item{data}{data}
 }
 \description{
 Writes nowcasting

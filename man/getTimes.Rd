@@ -2,22 +2,19 @@
 % Please edit documentation in R/get.times.R
 \name{getTimes}
 \alias{getTimes}
-\title{Title}
+\title{getTimes}
 \usage{
 getTimes(x, late, early, censored = FALSE)
 }
 \arguments{
-\item{x}{foo}
+\item{x}{x}
 
-\item{late}{foo}
+\item{late}{late}
 
-\item{early}{foo}
+\item{early}{early}
 
-\item{censored}{foo}
-}
-\value{
-
+\item{censored}{censored}
 }
 \description{
-Title
+getTimes
 }

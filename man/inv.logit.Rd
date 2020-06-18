@@ -9,9 +9,6 @@ inv.logit(x)
 \arguments{
 \item{x}{vector}
 }
-\value{
-
-}
 \description{
 Inverso da logit
 }

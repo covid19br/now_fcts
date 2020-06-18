@@ -9,13 +9,14 @@
 #'     univariada (n de casos)
 #' @param window.width largura da janela (em unidades de tempo da
 #'     serie temporal, em geral dias)
+#' @importFrom zoo rollapply
 #' @export
 dt.rw <- function(zoo.obj, window.width){
-    if(class(zoo.obj)!="zoo"|!is.null(dim(zoo.obj)))
-        stop("'zoo.obj' deve ser um objeto da classe zoo com uma única variável")
+    if (class(zoo.obj) != "zoo"| !is.null(dim(zoo.obj)))
+        stop("'zoo.obj' deve ser um objeto da classe zoo com uma unica variavel")
     rollapply(zoo.obj,
               width = window.width,
               FUN = function(x) log(2)/fitP.exp(x)[c("coef","coef.low","coef.upp")],
-              align="right")
+              align = "right")
 }
 

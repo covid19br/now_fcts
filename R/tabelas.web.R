@@ -1,12 +1,12 @@
 # funcao para gerar tabelas que vao para o site
 #' Title
 #'
-#' @param output.dir
-#' @param tipo
-#' @param df.cum
-#' @param df.td
-#' @param df.re
-#' @param data_base
+#' @param output.dir output.dir
+#' @param tipo tipo
+#' @param df.cum df.cum
+#' @param df.td df.td
+#' @param df.re df.re
+#' @param data_base data_base
 #'
 #' @importFrom utils write.table
 #' @export

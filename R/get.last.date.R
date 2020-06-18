@@ -2,7 +2,6 @@
 #'
 #' @param dir diretorio
 #'
-#' @return
 #' @export
 #'
 get.last.date <- function(dir) {

@@ -7,7 +7,7 @@
 makeNamedList(...)
 }
 \arguments{
-\item{...}{}
+\item{...}{...}
 }
 \description{
 makeNamedList

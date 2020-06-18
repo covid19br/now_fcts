@@ -1,6 +1,6 @@
 #' makeNamedList
 #'
-#' @param ...
+#' @param ... ...
 #'
 #' @export
 #'

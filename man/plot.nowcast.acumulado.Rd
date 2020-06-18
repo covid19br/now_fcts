@@ -4,10 +4,12 @@
 \alias{plot.nowcast.acumulado}
 \title{Funcao para fazer o plot de nowcasting acumulado, com valores estimados e notificados, com projecao para os proximos 5 dias}
 \usage{
-\method{plot}{nowcast.acumulado}(df)
+\method{plot}{nowcast.acumulado}(df, ...)
 }
 \arguments{
-\item{df}{}
+\item{df}{df}
+
+\item{...}{...}
 }
 \description{
 Funcao para fazer o plot de nowcasting acumulado, com valores estimados e notificados, com projecao para os proximos 5 dias

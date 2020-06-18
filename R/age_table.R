@@ -1,7 +1,8 @@
-#' Title
+#' classifyAgeFast
 #' @param x vector of ages
 #'
 #' @export
+#' @importFrom plyr laply
 classifyAgeFast = function(x){
   age_table = structure(list(idade_lower = c(0L, 10L, 20L, 30L, 40L, 50L, 60L, 70L, 80L),
                              idade_upper = c(9L, 19L, 29L, 39L, 49L, 59L, 69L, 79L, 100L),

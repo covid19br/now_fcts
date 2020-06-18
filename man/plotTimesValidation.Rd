@@ -7,7 +7,11 @@
 plotTimesValidation(times_table, fit1, age = TRUE)
 }
 \arguments{
-\item{age}{}
+\item{times_table}{times_table}
+
+\item{fit1}{fit1}
+
+\item{age}{age}
 }
 \description{
 plotTimesValidation

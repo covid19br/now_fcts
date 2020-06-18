@@ -12,6 +12,8 @@
 #'     coeficientes da regressão e seus intervalos de confiança. Se
 #'     FALSE retorna o objeto do modelo ajustado, da classe glm.
 #' @export
+#' @importFrom stats coef confint glm poisson
+#'
 fitP.exp <- function(zoo.obj, only.coef = TRUE){
     ## Nao funciona com rollaply
     ## if(class(zoo.obj)!="zoo"|!is.null(ncol(zoo.obj)))
@@ -20,7 +22,7 @@ fitP.exp <- function(zoo.obj, only.coef = TRUE){
     fit <- try(glm(zoo.obj ~ ndias, family = poisson))
     if(only.coef){
             ci <- try(confint(fit))
-            if(any(class(fit)=="try-error")||any(class(ci)=="try-error"))
+            if(any(class(fit) == "try-error")||any(class(ci) == "try-error"))
                 results <- rep(NA,6)
             else
                 results <- c(coef(fit),ci[1,], ci[2,])

@@ -15,9 +15,6 @@ estimate.R0(novos.casos, day0 = 8, delay = 7, ...)
 
 \item{...}{outros parâmetros}
 }
-\value{
-
-}
 \description{
 Estima R efetivo
 }

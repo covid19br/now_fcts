@@ -1,8 +1,8 @@
 #' makeHospitalTable
 #'
-#' @param df.table
-#' @param dates
-#' @param UTI
+#' @param df.table df.table
+#' @param dates dates
+#' @param UTI UTI
 #'
 #' @export
 #'

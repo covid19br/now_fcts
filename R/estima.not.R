@@ -11,6 +11,8 @@
 #'     contido na lista que é retornada pela função.
 #' @param from posicao do vetor de casos a partir da qual estimar o
 #'     numero de notificacões
+#' @importFrom zoo zoo
+#' @importFrom stats time
 #' @export
 estima.not <- function(vetor.casos, NobBS.output, NobBS.params.post, from = length(vetor.casos)-30){
     if(missing(NobBS.params.post))

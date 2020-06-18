@@ -1,11 +1,11 @@
 # Funcao para calcular o tempo de duplicacao
 #' Title
 #'
-#' @param df.td
-#'
+#' @param df.td df.td
+#' @param ... ...
 #' @export
 #'
-plot.tempo.dupl <- function(df.td) {#data.frame com tempo de duplicacao
+plot.tempo.dupl <- function(df.td, ...) {#data.frame com tempo de duplicacao
     plot <- df.td %>%
         mutate(data = as.Date(data)) %>%
         ggplot(aes(x = data, y = estimativa)) +

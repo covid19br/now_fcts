@@ -7,7 +7,17 @@
 tabelas.web(output.dir, tipo, df.cum, df.td, df.re = NULL, data_base)
 }
 \arguments{
-\item{data_base}{}
+\item{output.dir}{output.dir}
+
+\item{tipo}{tipo}
+
+\item{df.cum}{df.cum}
+
+\item{df.td}{df.td}
+
+\item{df.re}{df.re}
+
+\item{data_base}{data_base}
 }
 \description{
 Title

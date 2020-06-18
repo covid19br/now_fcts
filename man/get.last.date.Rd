@@ -9,9 +9,6 @@ get.last.date(dir)
 \arguments{
 \item{dir}{diretorio}
 }
-\value{
-
-}
 \description{
 Pega a data mais recente da base de dados
 }

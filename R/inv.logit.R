@@ -2,7 +2,6 @@
 #'
 #' @param x vector
 #'
-#' @return
 #' @export
 #'
 inv.logit <- function(x) {

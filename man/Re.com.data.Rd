@@ -10,6 +10,10 @@
 \item{ncasos}{vetor de número de novos casos}
 
 \item{datas}{vetor de datas dos novos casos}
+
+\item{dia0}{dia zero}
+
+\item{delay}{atraso}
 }
 \description{
 Calcula R efetivo sobre a estimativas de nowcasting retornadas pela função NobBS::NobBS

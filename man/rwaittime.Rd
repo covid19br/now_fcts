@@ -7,7 +7,9 @@
 rwaittime(n, fit)
 }
 \arguments{
-\item{fit}{}
+\item{n}{n}
+
+\item{fit}{fit}
 }
 \description{
 rwaittime

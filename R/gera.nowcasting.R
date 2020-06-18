@@ -8,6 +8,9 @@
 #' @param window janela para nowcasting
 #'
 #' @export
+#' @importFrom stats dbinom
+#' @importFrom NobBS NobBS
+#' @importFrom dplyr filter select mutate
 gera.nowcasting <- function(dados, # dados
                             caso = TRUE, # caso = FALSE faz obitos
                             tipo, # covid ou srag
@@ -77,7 +80,7 @@ gera.nowcasting <- function(dados, # dados
         report_date = "dt_encerra",
         units = "1 day",
         moving_window = window,
-        specs = list(beta.priors = dbinom(0:40, size = 40, p = 15/50)))
+        specs = list(beta.priors = dbinom(0:40, size = 40, prob = 15/50)))
     } else {
       dados.now <- NULL
     }

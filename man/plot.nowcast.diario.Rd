@@ -4,10 +4,12 @@
 \alias{plot.nowcast.diario}
 \title{Funcao para fazer plot nowcast de casos diarios (notificado e nowcasting), com linha de tendencia atenuada e IC}
 \usage{
-\method{plot}{nowcast.diario}(df)
+\method{plot}{nowcast.diario}(df, ...)
 }
 \arguments{
-\item{df}{}
+\item{df}{df}
+
+\item{...}{...}
 }
 \description{
 Funcao para fazer plot nowcast de casos diarios (notificado e nowcasting), com linha de tendencia atenuada e IC

@@ -6,6 +6,9 @@
 \usage{
 na.zero(x)
 }
+\arguments{
+\item{x}{x}
+}
 \description{
 substitui NAS por zeros
 }

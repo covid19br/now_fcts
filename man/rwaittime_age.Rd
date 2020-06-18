@@ -7,7 +7,11 @@
 rwaittime_age(n, age, fit)
 }
 \arguments{
-\item{fit}{}
+\item{n}{n}
+
+\item{age}{age}
+
+\item{fit}{fit}
 }
 \description{
 rwaittime_age

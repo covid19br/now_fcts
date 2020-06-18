@@ -4,10 +4,12 @@
 \alias{plot.tempo.dupl}
 \title{Title}
 \usage{
-\method{plot}{tempo.dupl}(df.td)
+\method{plot}{tempo.dupl}(df.td, ...)
 }
 \arguments{
-\item{df.td}{}
+\item{df.td}{df.td}
+
+\item{...}{...}
 }
 \description{
 Title

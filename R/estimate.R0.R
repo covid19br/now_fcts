@@ -5,7 +5,7 @@
 #' @param delay atraso
 #' @param ... outros parâmetros
 #'
-#' @return
+#' @importFrom EpiEstim make_config estimate_R
 #' @export
 #'
 estimate.R0 <- function(novos.casos, day0 = 8, delay = 7, ...){

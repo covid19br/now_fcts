@@ -11,7 +11,9 @@ read.sivep(dir, escala, sigla, geocode, data, residentes = TRUE, ...)
 \arguments{
 \item{dir}{Caractere. Caminho relativo para o diretório onde está o dado}
 
-\item{escala}{Caractere. Escala de análise aceita: \code{"pais"}, \code{"estado"}, \code{"municipio"} #ö micro e meso um dia}
+\item{escala}{Caractere. Escala de análise aceita: \code{"pais"}, \code{"estado"}, \code{"municipio"}}
+
+\item{sigla}{sigla UF}
 
 \item{geocode}{Caractere. Geocode IBGE do estado ou município. Município pde ter 6 ou 7 dígitos}
 

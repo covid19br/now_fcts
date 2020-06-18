@@ -2,7 +2,7 @@
 % Please edit documentation in R/age_table.R
 \name{classifyAgeFast}
 \alias{classifyAgeFast}
-\title{Title}
+\title{classifyAgeFast}
 \usage{
 classifyAgeFast(x)
 }
@@ -10,5 +10,5 @@ classifyAgeFast(x)
 \item{x}{vector of ages}
 }
 \description{
-Title
+classifyAgeFast
 }

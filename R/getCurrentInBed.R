@@ -1,14 +1,13 @@
-#' Title
+#' getCurrentInBed
 #'
-#' @param df foo
-#' @param date foo
-#' @param UTI foo
+#' @param df df
+#' @param date date
+#' @param UTI UTI
 #'
-#' @return
 #' @export
 #'
 getCurrentInBed = function(df, date, UTI){
-  if(!UTI){
+  if (!UTI) {
     df = df %>%
       filter(dt_int <= date & (dt_evo >= date | is.na(dt_evo)))
   }else{

@@ -12,9 +12,14 @@
 #' @param quiet quiet
 #' @param specs specs
 #'
-#' @importFrom stats median quantile
-#' @import dplyr
 #' @export
+#' @importFrom brms as.mcmc
+#' @importFrom dplyr last rename mutate select select_vars group_by_ left_join starts_with
+#' @importFrom reshape2 melt
+#' @importFrom rjags jags.model coda.samples
+#' @importFrom stats median quantile update
+#' @importFrom tidyr pivot_wider
+#'
 #'
 NobBS.posterior <- function(data,
                             now,
@@ -49,7 +54,7 @@ NobBS.posterior <- function(data,
   }
 
   # Check that "now" is possible in the sequence of reporting data
-  if (dplyr::last(seq(unique(data[, onset_date])[1], now, by = units)) != now) {
+  if (last(seq(unique(data[, onset_date])[1], now, by = units)) != now) {
     stop("The date `now` is not possible to estimate: the possible nowcast dates are seq(unique(data[,onset_date])[1],now,by=units).")
   }
 
@@ -70,20 +75,20 @@ NobBS.posterior <- function(data,
   if (is.null(cutoff_D)) {
     cutoff_D <- TRUE
   }
-  if(quiet==TRUE) {
+  if (quiet == TRUE) {
     progress.bar <- "none"
   }
-  if(quiet==FALSE){
+  if(quiet==FALSE) {
     progress.bar <- "text"
   }
 
   # Check that proportion_reported is between 0,1
-  if (proportion_reported > 1 | proportion_reported<=0){
+  if (proportion_reported > 1 | proportion_reported <= 0) {
     stop("The proportion_reported must be a number between (0,1].")
   }
 
   # Manipulate the control arguments
-  if ("Poisson"%in% (specs[["dist",exact=TRUE]])) { # if no distribution specified, take Poisson as default
+  if ("Poisson" %in% (specs[["dist",exact = TRUE]])) { # if no distribution specified, take Poisson as default
     specs$dist <- "Poisson"
   }
   if (is.null(specs[["dist",exact=TRUE]])) {
@@ -207,7 +212,7 @@ NobBS.posterior <- function(data,
   JAGSmodPois <- (system.file("JAGS", "nowcastPois.txt", package="NobBS")) # file.path(path.package('NobBS'),"nowcastPois.txt")
   JAGSmodNB <- (system.file("JAGS", "nowcastNB.txt", package="NobBS")) #file.path(path.package('NobBS'),"nowcastNB.txt")
 
-  nowcastmodel = rjags::jags.model(
+  nowcastmodel = jags.model(
     file = ifelse(specs[["dist"]]=="Poisson",JAGSmodPois,JAGSmodNB),
     data = dataList,
     n.chains = nChains,
@@ -215,9 +220,9 @@ NobBS.posterior <- function(data,
     inits=list(.RNG.seed=1,.RNG.name="base::Super-Duper"),
     quiet=quiet)
 
-  stats::update( object = nowcastmodel, n.iter = nBurnin , progress.bar = progress.bar)
+  update(object = nowcastmodel, n.iter = nBurnin , progress.bar = progress.bar)
 
-  lambda.output = coda::coda.samples(
+  lambda.output = coda.samples(
     model = nowcastmodel,
     variable.names =  if("sum.n"%in%specs$param_names) c(specs$param_names) else c(specs$param_names,"sum.n"),
     n.iter = nIter,
@@ -225,7 +230,7 @@ NobBS.posterior <- function(data,
     quiet=quiet,
     progress.bar=progress.bar)
 
-  mymod.mcmc <- coda::as.mcmc(lambda.output)
+  mymod.mcmc <- as.mcmc(lambda.output)
   mymod.dat <- as.data.frame(as.matrix(mymod.mcmc))
 
   # Extract all hindcasts and 95% credible intervals
@@ -233,8 +238,8 @@ NobBS.posterior <- function(data,
 
   estimates <- matrix(NA, ncol=3, nrow=now.T,dimnames=list(NULL,c("estimate","lower","upper")))
   for(v in t.extract){
-    estimates[v,1] <- stats::median(mymod.dat[, grep(paste("sum.n[",v,"]",sep=""), colnames(mymod.dat), fixed = TRUE)])
-    estimates[v,2] <- stats::quantile((mymod.dat[, grep(paste("sum.n[",v,"]",sep=""), colnames(mymod.dat), fixed=TRUE)]),probs = c((1-specs$conf)/2,1-((1-specs$conf)/2)))[1]
+    estimates[v,1] <- median(mymod.dat[, grep(paste("sum.n[",v,"]",sep=""), colnames(mymod.dat), fixed = TRUE)])
+    estimates[v,2] <- quantile((mymod.dat[, grep(paste("sum.n[",v,"]",sep=""), colnames(mymod.dat), fixed=TRUE)]),probs = c((1-specs$conf)/2,1-((1-specs$conf)/2)))[1]
     estimates[v,3] <- quantile((mymod.dat[, grep(paste("sum.n[",v,"]",sep=""), colnames(mymod.dat), fixed=TRUE)]),probs = c((1-specs$conf)/2,1-((1-specs$conf)/2)))[2]
   }
 
@@ -266,21 +271,21 @@ NobBS.posterior <- function(data,
   parameter_extract <- matrix(NA, nrow=10000)
 
   if("lambda"%in%specs$param_names){
-    parameter_extract <- cbind(parameter_extract,mymod.dat %>% dplyr::select(select_vars(names(mymod.dat),starts_with(paste("lambda[",t,",",sep="")))))
+    parameter_extract <- cbind(parameter_extract,mymod.dat %>% select(select_vars(names(mymod.dat),starts_with(paste("lambda[",t,",",sep="")))))
   }
   if("beta.logged"%in%specs$param_names){
     betas.logged<- matrix(NA,nrow=10000,ncol=(max_D+1))
     dimnames(betas.logged) = list(NULL,c(paste("Beta",c(0:max_D))))
     for(d in 0:max_D){
-      betas.logged[,(d+1)] <- (mymod.dat %>% dplyr::select(select_vars(names(mymod.dat),starts_with(paste("beta.logged[",(d+1),"]",sep="")))))[,1]
+      betas.logged[,(d+1)] <- (mymod.dat %>% select(select_vars(names(mymod.dat),starts_with(paste("beta.logged[",(d+1),"]",sep="")))))[,1]
     }
     parameter_extract <- cbind(parameter_extract,betas.logged)
   }
   if("alpha"%in%specs$param_names){
-    parameter_extract <- cbind(parameter_extract,mymod.dat %>% dplyr::select(select_vars(names(mymod.dat),starts_with(paste("alpha[",t,sep="")))))
+    parameter_extract <- cbind(parameter_extract,mymod.dat %>% select(select_vars(names(mymod.dat),starts_with(paste("alpha[",t,sep="")))))
   }
   if("tau2.alpha" %in% specs$param_names){
-    parameter_extract <- cbind(parameter_extract,mymod.dat %>% dplyr::select(select_vars(names(mymod.dat),starts_with("tau2.alpha"))))
+    parameter_extract <- cbind(parameter_extract,mymod.dat %>% select(select_vars(names(mymod.dat),starts_with("tau2.alpha"))))
   }
 
   #log.beta.td1 <- mymod.dat %>% dplyr::select(select_vars(names(mymod.dat),starts_with(paste("beta.logged[1]",sep=""))))
@@ -293,13 +298,13 @@ NobBS.posterior <- function(data,
   #                          alpha.last,tau2.alpha)
 
   nowcast.post.samps <- (mymod.dat %>%
-                           dplyr::select(select_vars(names(mymod.dat),starts_with("sum.n"))))
+                           select(select_vars(names(mymod.dat),starts_with("sum.n"))))
   colnames(nowcast.post.samps) = 1:moving_window
-  m_post = reshape2::melt(nowcast.post.samps)
+  m_post = melt(nowcast.post.samps)
   m_post$sample = 1:nKeep
-  trajetoria = tidyr::pivot_wider(m_post, names_from = sample, values_from = value) %>%
-    dplyr::mutate(variable = as.Date(as.numeric(variable), origin = now-moving_window)) %>%
-    dplyr::rename(date = variable)
+  trajetoria = pivot_wider(m_post, names_from = sample, values_from = value) %>%
+    mutate(variable = as.Date(as.numeric(variable), origin = now-moving_window)) %>%
+    rename(date = variable)
   trajetoria
 }
 

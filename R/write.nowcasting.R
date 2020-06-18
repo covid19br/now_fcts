@@ -1,9 +1,9 @@
 #' Writes nowcasting
 #'
-#' @param now
-#' @param output.dir
-#' @param tipo
-#' @param data
+#' @param now now
+#' @param output.dir output.dir
+#' @param tipo tipo
+#' @param data data
 #'
 #' @importFrom utils write.csv
 #' @export

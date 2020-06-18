@@ -1,10 +1,11 @@
 #' Funcao para plot do R efetivo
 #'
-#' @param df.re
+#' @param df.re df.re
+#' @param ... ...
 #'
 #' @export
 #'
-plot.estimate.R0 <- function(df.re) { # df com r efetivo
+plot.estimate.R0 <- function(df.re, ...) { # df com r efetivo
     plot <- df.re %>%
         mutate(data = as.Date(data)) %>%
         ggplot(aes(x = data, y = Mean.R)) +

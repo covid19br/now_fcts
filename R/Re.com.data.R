@@ -1,8 +1,8 @@
 #' Calcula R efetivo sobre a estimativas de nowcasting retornadas pela função NobBS::NobBS
 #'
 #' @param ncasos vetor de número de novos casos
-#' @param dia0
-#' @param delay
+#' @param dia0 dia zero
+#' @param delay atraso
 #' @param datas vetor de datas dos novos casos
 Re.com.data <- function(ncasos, datas, dia0 = min(datas), delay = 5) {
     if (length(ncasos) != length(datas)) stop("ncasos e ndatas devem ter o mesmo comprimento")

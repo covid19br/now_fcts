@@ -2,16 +2,13 @@
 % Please edit documentation in R/get.hospital.probabilities.R
 \name{getProbUTI}
 \alias{getProbUTI}
-\title{Title}
+\title{getProbUTI}
 \usage{
 getProbUTI(df)
 }
 \arguments{
 \item{df}{data.frame}
 }
-\value{
-
-}
 \description{
-Title
+getProbUTI
 }

@@ -2,20 +2,17 @@
 % Please edit documentation in R/getCurrentInBed.R
 \name{getCurrentInBed}
 \alias{getCurrentInBed}
-\title{Title}
+\title{getCurrentInBed}
 \usage{
 getCurrentInBed(df, date, UTI)
 }
 \arguments{
-\item{df}{foo}
+\item{df}{df}
 
-\item{date}{foo}
+\item{date}{date}
 
-\item{UTI}{foo}
-}
-\value{
-
+\item{UTI}{UTI}
 }
 \description{
-Title
+getCurrentInBed
 }

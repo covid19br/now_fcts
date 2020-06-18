@@ -1,12 +1,12 @@
-#' Title
+#' getTimes
 #'
-#' @param x foo
-#' @param late foo
-#' @param early foo
-#' @param censored foo
+#' @param x x
+#' @param late late
+#' @param early early
+#' @param censored censored
 #'
-#' @return
 #' @export
+#' @importFrom lubridate today
 #'
 getTimes = function(x, late, early, censored = FALSE){
   if(!censored){

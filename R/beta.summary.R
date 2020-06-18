@@ -14,6 +14,7 @@
 #'     ser notificado D dias após o dias o primeiro sintoma, sendo que
 #'     vai de zero ao máximo definido pelos argumentos do nowcasting
 #' @export
+#' @importFrom stats quantile
 beta.summary <- function(NobBS.output, NobBS.params.post){
     if (missing(NobBS.params.post))
         df <- NobBS.output$params.post

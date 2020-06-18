@@ -4,10 +4,10 @@
 \alias{plot.estimate.R0}
 \title{Funcao para plot do R efetivo}
 \usage{
-\method{plot}{estimate.R0}(df.re, ...)
+\method{plot}{estimate.R0}(x, ...)
 }
 \arguments{
-\item{df.re}{df.re}
+\item{x}{df.re}
 
 \item{...}{...}
 }

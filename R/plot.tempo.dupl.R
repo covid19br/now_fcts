@@ -1,11 +1,12 @@
 # Funcao para calcular o tempo de duplicacao
 #' Title
 #'
-#' @param df.td df.td
+#' @param x df.td
 #' @param ... ...
 #' @export
 #'
-plot.tempo.dupl <- function(df.td, ...) {#data.frame com tempo de duplicacao
+plot.tempo.dupl <- function(x, ...) {#data.frame com tempo de duplicacao
+    df.td <- x
     plot <- df.td %>%
         mutate(data = as.Date(data)) %>%
         ggplot(aes(x = data, y = estimativa)) +
@@ -15,7 +16,7 @@ plot.tempo.dupl <- function(df.td, ...) {#data.frame com tempo de duplicacao
         # coloca coordenada cartesiana para resolver o problema do lim
         coord_cartesian(ylim = c(0, 100)) +
         #ylim(c(0, max(df.td$ic.sup)))
-        ylab("Tempo de duplicação (dias)") +
+        ylab(paste0("Tempo de duplica", "\u00e7",  "\u00e3", "o (dias)")) +
         plot.formatos
     plot
 }

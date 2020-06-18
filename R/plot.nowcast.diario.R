@@ -1,10 +1,11 @@
 #' Funcao para fazer plot nowcast de casos diarios (notificado e nowcasting), com linha de tendencia atenuada e IC
 #'
-#' @param df df
+#' @param x df
 #' @param ... ...
 #' @export
 #'
-plot.nowcast.diario <- function(df, ...) {
+plot.nowcast.diario <- function(x, ...) {
+    df <- x
     plot <- df %>%
         mutate(data = as.Date(data)) %>%
         ggplot(aes(x = data)) +
@@ -17,7 +18,7 @@ plot.nowcast.diario <- function(df, ...) {
         scale_x_date(date_labels = "%d/%b") +
         scale_color_manual(name = "", values = RColorBrewer::brewer.pal(3, "Set1")[2:1]) +
         xlab("Dia do primeiro sintoma") +
-        ylab("Número de novos casos") +
+        ylab(paste0("N", "\u00fa", "de novos casos")) +
         plot.formatos +
         theme(legend.position = "none")
     plot

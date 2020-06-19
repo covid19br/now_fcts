@@ -7,7 +7,7 @@
 #' @param residentes Filtar por residentes ou por local da notificação
 #' @param sigla sigla UF
 #' @param ... Qualquer parâmetro de `read.csv()`
-#'
+#' @export
 #' @importFrom utils unzip count.fields
 #' @importFrom lubridate parse_date_time as_date
 

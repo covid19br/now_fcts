@@ -8,17 +8,20 @@ prepara.dados(
   tipo = "covid",
   data.base,
   output.dir = output.dir,
-  trajectories = FALSE
+  trajectories = FALSE,
+  include.post = TRUE
 )
 }
 \arguments{
 \item{tipo}{Caractere. Nome da base de dados para preparar. Tipos possíveis: \code{covid} para casos de COVID-19, \code{srag} para casos de SRAG, \code{obitos_covid} para óbitos por COVID-19 e \code{obitos_srag} para óbitos por SRAG}
 
-\item{data.base}{data}
+\item{data.base}{data.base}
 
-\item{output.dir}{dir}
+\item{output.dir}{output.dir}
 
 \item{trajectories}{bool carregar trajetórias de projeções do nowcasting}
+
+\item{include.post}{include.post}
 }
 \description{
 Função para automatizar a preparação dos dados de nowcasting por unidade administrativa

@@ -90,7 +90,7 @@ check.geocode <- function(escala,
   if (escala == "drs") {
     if (missing(sigla))
       stop("precisa de sigla para escala DRS")
-    drs <- read.csv(paste0('./dados/DRS_', sigla, '.csv'))
+    drs <- DRS_SP
     if (geocode %in% drs$DRS) {
       id <- which(drs$DRS == geocode)[1]
       if (nonascii)

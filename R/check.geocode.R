@@ -24,7 +24,7 @@ check.geocode <- function(escala,
   #df$nome.nonascii <- gsub(" ", "_", textclean::replace_non_ascii(df$nome))
   #df$nome.nonascii <- gsub("'", "", df$nome.nonascii)
   #write.csv(df, "./dados/geocode_ibge.csv", row.names = FALSE)
-  df <- read.csv("./dados/geocode_ibge.csv")
+  df <- geocode_ibge
   #geocode <- as.numeric(geocode)
   municipio.code <- sapply(df$id, function(x) substr(x, start = 1, stop = 6))
   micro.code   <- df$microrregiao.id

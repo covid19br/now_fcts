@@ -60,7 +60,7 @@ read.sivep <- function(dir, # diretorio onde esta o dado
 
   # filtro por estados ou municipio
   if (escala != "pais") {
-  df <- read.csv("./dados/geocode_ibge.csv")
+  df <- geocode_ibge
   #geocode <- as.numeric(geocode)
   municipio.code <- sapply(df$id, function(x) substr(x, start = 1, stop = 6))
   micro.code   <- df$microrregiao.id

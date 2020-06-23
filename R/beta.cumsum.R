@@ -24,7 +24,7 @@ beta.cumsum <- function(NobBS.output, NobBS.params.post, samples, nowcasting){
         if (samples > nrow(df1))
             stop(paste("samples deve ter tamanho menor ou igual a", nrow(df1)))
         else
-            df2 < -df1[sample(nrow(df1), samples), ]
+            df2 <- df1[sample(nrow(df1), samples), ]
             df2 <- exp(df2)
             df3 <- t(apply(df2, 1, cumsum))
             data.frame(atraso = as.integer(substr(colnames(df3), 6, 8)),

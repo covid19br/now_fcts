@@ -8,6 +8,7 @@
 #'     Os valores são cumulativos, e portanto podem ser interpretados como a estimativa cumulativa de casos
 #'     ser notificados D dias após o dias o primeiro sintoma, sendo que
 #'     vai de zero ao máximo definido pelos argumentos do nowcasting
+#'@export
 nowcasting.cumsum <- function(NobBS.posterior.output, NobBS.posterior.output.trajectories, samples){
   if(missing(NobBS.posterior.output.trajectories))
     df <- NobBS.posterior.output$trajectories

@@ -4,7 +4,7 @@
 \alias{beta.cumsum}
 \title{Médias e ICs das probabilidades de notificação cumulativa a cada dia}
 \usage{
-beta.cumsum(NobBS.output, NobBS.params.post, samples, nowcasting)
+beta.cumsum(NobBS.output, NobBS.params.post, samples)
 }
 \arguments{
 \item{NobBS.output}{objeto retornado pela função NobBS do pacote de
@@ -16,8 +16,6 @@ posteriores dos parâmetros estimados pela função NobBS. Está
 contido na lista que é retornada pela função}
 
 \item{samples}{Número de samples a ser considerado}
-
-\item{nowcasting}{?}
 }
 \value{
 data frame com média e quantis 2.5\% e 97.5\% das

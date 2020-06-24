@@ -6,7 +6,6 @@
 #'     posteriores dos parâmetros estimados pela função NobBS. Está
 #'     contido na lista que é retornada pela função
 #' @param samples Número de samples a ser considerado
-#' @param nowcasting ?
 #' @return data frame com média e quantis 2.5% e 97.5% das
 #'     distribuições a posteriori dos parâmetros de atraso de
 #'     notificação pelo método de nowcasting da função NobBS. Os
@@ -15,11 +14,11 @@
 #'     ser notificados D dias após o dias o primeiro sintoma, sendo que
 #'     vai de zero ao máximo definido pelos argumentos do nowcasting
 #' @export
-beta.cumsum <- function(NobBS.output, NobBS.params.post, samples, nowcasting){
+beta.cumsum <- function(NobBS.output, NobBS.params.post, samples){
     if (missing(NobBS.params.post))
         df <- NobBS.output$params.post
     else
-        df <- nowcasting$params.post
+        df <- NobBS.output$params.post
         df1 <- df[, names(df)[grepl("Beta",names(df))]]
         if (samples > nrow(df1))
             stop(paste("samples deve ter tamanho menor ou igual a", nrow(df1)))

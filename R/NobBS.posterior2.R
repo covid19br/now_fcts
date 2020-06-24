@@ -21,7 +21,7 @@
 #' @importFrom tidyr pivot_wider
 #'
 #'
-NobBS.posterior <- function(data, 
+NobBS.posterior2 <- function(data, 
                             now, 
                             units, 
                             onset_date, 

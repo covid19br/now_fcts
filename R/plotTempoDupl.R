@@ -5,7 +5,7 @@
 #' @param ... ...
 #' @export
 #'
-plot.tempo.dupl <- function(x, ...) {#data.frame com tempo de duplicacao
+plotTempoDupl <- function(x, ...) {#data.frame com tempo de duplicacao
     df.td <- x
     plot <- df.td %>%
         mutate(data = as.Date(data)) %>%
@@ -17,6 +17,6 @@ plot.tempo.dupl <- function(x, ...) {#data.frame com tempo de duplicacao
         coord_cartesian(ylim = c(0, 100)) +
         #ylim(c(0, max(df.td$ic.sup)))
         ylab(paste0("Tempo de duplica", "\u00e7",  "\u00e3", "o (dias)")) +
-        plot.formatos
+        themeObservatorio()
     plot
 }

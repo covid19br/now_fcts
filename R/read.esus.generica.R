@@ -4,7 +4,7 @@
 #' @param encoding encoding
 #' @param ... ...
 #'
-#' @importFrom readr read_delim
+#' @importFrom readr read_delim guess_encoding problems
 #' @importFrom lubridate as_date parse_date_time
 #' @importFrom utils unzip count.fields
 #'

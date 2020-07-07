@@ -6,7 +6,7 @@
 #' @export
 #' @import ggplot2
 #'
-plot.nowcast.acumulado <- function(x, ...) {
+plotNowcastAcumulado <- function(x, ...) {
     df <- x
     plot <- df %>%
         mutate(data = as.Date(data)) %>%
@@ -28,7 +28,7 @@ plot.nowcast.acumulado <- function(x, ...) {
         geom_line(aes(y = not.mean.c.proj, color = "Notificados"), lty = "longdash") +
         #geom_point(aes(y = not.mean.c.proj, color = "Notificados"), size = 1) +
         scale_x_date(date_labels = "%d/%b") +
-        plot.formatos +
+        themeObservatorio() +
         scale_color_discrete(name = "") +
         scale_color_manual(name = "", values = RColorBrewer::brewer.pal(3, "Set1")[1:2]) +
         xlab("Dia do primeiro sintoma") +

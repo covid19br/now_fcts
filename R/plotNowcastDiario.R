@@ -4,7 +4,7 @@
 #' @param ... ...
 #' @export
 #'
-plot.nowcast.diario <- function(x, ...) {
+plotNowcastDiario <- function(x, ...) {
     df <- x
     plot <- df %>%
         mutate(data = as.Date(data)) %>%
@@ -19,7 +19,7 @@ plot.nowcast.diario <- function(x, ...) {
         scale_color_manual(name = "", values = RColorBrewer::brewer.pal(3, "Set1")[2:1]) +
         xlab("Dia do primeiro sintoma") +
         ylab(paste0("N", "\u00fa", "de novos casos")) +
-        plot.formatos +
+        themeObservatorio() +
         theme(legend.position = "none")
     plot
 }

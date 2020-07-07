@@ -5,7 +5,7 @@
 #'
 #' @export
 #'
-plot.estimate.R0 <- function(x, ...) { # df com r efetivo
+plotEstimateR0 <- function(x, ...) { # df com r efetivo
     df.re <- x
     leg.y <- paste0("N", "\u00fa", "mero de reprodu", "\u00e7",  "\u00e3", "o da epidemia")
     plot <- df.re %>%
@@ -17,6 +17,6 @@ plot.estimate.R0 <- function(x, ...) { # df com r efetivo
         ylim(min(c(0.8, min(df.re$Quantile.0.025.R))), max(df.re$Quantile.0.975.R)) +
         geom_hline(yintercept = 1, linetype = "dashed", col = "red", size = 1) +
         ylab(leg.y) +
-        plot.formatos
+        themeObservatorio()
     plot
 }

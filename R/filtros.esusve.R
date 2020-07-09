@@ -20,7 +20,6 @@ filtros.esusve <- function(dados, tipo, remove.col = TRUE) {
     dados2 <- dados %>%
       filter(.data$resultadoteste == "Positivo" |
                stringr::str_detect(.data$classificacaofinal, "Confirma")) %>%
-      select(.data$datainiciosintomas, .data$datanotificacao, .data$datateste, .data$dataencerramento) %>%
       mutate(dataencerramento = pmax(.data$datateste, .data$datanotificacao, .data$dataencerramento, na.rm = TRUE))
 
   # seleciona apenas colunas usadas no nowcasting

@@ -2,13 +2,15 @@
 % Please edit documentation in R/get.data.base.R
 \name{get.data.base}
 \alias{get.data.base}
-\title{Extrai a data mais recente de nowcasting}
+\title{Extrai as datas de um vetor (para pegar a última data ver get.last.date)}
 \usage{
-get.data.base(names)
+get.data.base(names, last = FALSE)
 }
 \arguments{
 \item{names}{vector}
+
+\item{last}{Logical, whether the most recent date of the vector should be returned}
 }
 \description{
-Extrai a data mais recente de nowcasting
+Extrai as datas de um vetor (para pegar a última data ver get.last.date)
 }

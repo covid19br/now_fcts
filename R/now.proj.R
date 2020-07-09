@@ -5,6 +5,7 @@
 #' @param n.dias n.dias
 #' @param data data
 #' @param now.params.post Data frame. Objeto `now.params.post` gerado em gerado em prepara_dados_nowcasting.R
+#' @export
 now.proj <- function(pred,
                      pred.original,
                      now.params.post,

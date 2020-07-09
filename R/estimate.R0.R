@@ -1,14 +1,17 @@
-#' Estima R efetivo
+#' Estimating R accounting for uncertainty on the serial interval distribution
 #'
 #' @param novos.casos vetor com novos casos
-#' @param day0 dia zero
+#' @param day0 day to start the analysis
 #' @param delay atraso
 #' @param ... outros parâmetros
+#'
+#' @details The mean of the SI comes from a Normal(4.8, 0.71), truncated at 3.8 and 6.1
+#' the sd of the SI comes from  a Normal(2.3, 0.58), truncated at 1.6 and 3.5
 #'
 #' @importFrom EpiEstim make_config estimate_R
 #' @export
 #'
-estimate.R0 <- function(novos.casos, day0 = 8, delay = 7, ...){
+estimate.R0 <- function(novos.casos, day0 = 8, delay = 7, ...) {
     config <- make_config(list(si_parametric_distr = "L",
                                mean_si = 4.8, std_mean_si = 0.71,
                                min_mean_si = 3.8, max_mean_si = 6.1,

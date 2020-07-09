@@ -54,7 +54,7 @@ NobBS.posterior <- function(data,
   }
 
   # Check that "now" is possible in the sequence of reporting data
-  if (last(seq(unique(data[, onset_date])[1], now, by = units)) != now) {
+  if (dplyr::last(seq(min(data[,onset_date]),now,by = units)) != now) {
     stop("The date `now` is not possible to estimate: the possible nowcast dates are seq(unique(data[,onset_date])[1],now,by=units).")
   }
 
@@ -78,7 +78,7 @@ NobBS.posterior <- function(data,
   if (quiet == TRUE) {
     progress.bar <- "none"
   }
-  if(quiet==FALSE) {
+  if (quiet == FALSE) {
     progress.bar <- "text"
   }
 
@@ -106,19 +106,19 @@ NobBS.posterior <- function(data,
   if (is.null(specs[["alphat.rate.prior",exact=TRUE]])) {
     specs$alphat.rate.prior <- 0.001
   }
-  if (is.null(specs[["beta.priors",exact=TRUE]])) {
-    specs$beta.priors <- rep(0.1, times=(max_D)+1)
+  if (is.null(specs[["beta.priors",exact = TRUE]])) {
+    specs$beta.priors <- rep(0.1, times = (max_D) + 1)
   }
-  if (is.null(specs[["param_names",exact=TRUE]])&(specs[["dist"]]=="Poisson")) {
+  if (is.null(specs[["param_names", exact = TRUE]])&(specs[["dist"]]=="Poisson")) {
     specs$param_names <- c( "lambda","alpha","beta.logged","tau2.alpha","sum.n")
   }
-  if (is.null(specs[["param_names",exact=TRUE]])&(specs[["dist"]]=="NB")) {
+  if (is.null(specs[["param_names",exact = TRUE]])&(specs[["dist"]]=="NB")) {
     specs$param_names <- c( "lambda","alpha","beta.logged","tau2.alpha","sum.n","r")
   }
-  if (is.null(specs[["conf",exact=TRUE]])) {
+  if (is.null(specs[["conf",exact = TRUE]])) {
     specs$conf <- 0.95
   }
-  if (is.null(specs[["dispersion.prior",exact=TRUE]])&(specs[["dist"]]=="NB")) {
+  if (is.null(specs[["dispersion.prior",exact = TRUE]])&(specs[["dist"]]=="NB")) {
     specs$dispersion.prior <- c(0.001,0.001)
   }
   if (is.null(specs[["nAdapt",exact=TRUE]])) {
@@ -303,9 +303,10 @@ NobBS.posterior <- function(data,
   m_post = melt(nowcast.post.samps)
   m_post$sample = 1:nKeep
   trajetoria = pivot_wider(m_post, names_from = sample, values_from = value) %>%
-    mutate(variable = as.Date(as.numeric(variable), origin = now-moving_window)) %>%
-    rename(date = variable)
-  trajetoria
+    dplyr::mutate(variable = as.Date(as.numeric(variable), origin = now-moving_window)) %>%
+    dplyr::rename(date = variable)
+
+  list(estimates=estimates,estimates.inflated=estimates.inflated, nowcast.post.samps=nowcast.post.samps,params.post=parameter_extract[,2:ncol(parameter_extract)],trajectories=trajetoria)
 }
 
 #now.Date.covid  <-  max(covid.dt$dt_sin)

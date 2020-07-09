@@ -10,7 +10,7 @@ get.geocode <- function(nome_municipio,
                         nome_estado = NULL,
                         sigla = NULL) {
  df <- geocode_ibge
- municipio.code <- sapply(df$id, function(x) substr(x, start = 1, stop = 6))
+ municipio.code <- df$municipio.code
 
  nome <- textclean::replace_non_ascii(nome_municipio)
  nome <- gsub(" ", "_", nome)

@@ -1,4 +1,4 @@
-#' zoo2df
+#' zoo2df funcao para converter zoo em df
 #'
 #' @param zoo a zoo object
 #'

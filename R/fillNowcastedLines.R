@@ -9,11 +9,11 @@
 #' @param prob_UTI prob_UTI
 #' @param ... ...
 #'
-#' @export
 #' @importFrom dplyr select arrange
 #' @importFrom plyr ldply
 #' @importFrom purrr rbernoulli
 #' @importFrom tidyr replace_na
+#' @export
 #'
 fillNowcastedLines <- function(df,
                                nowcast,
@@ -69,7 +69,7 @@ fillNowcastedLines <- function(df,
     }
     return(new.df)
   }
-  estimate = rbind(df.now_casted, plyr::ldply(seq_along(dates), createNewInds, "estimate", ...)) %>% arrange(dt_sin)
+  estimate = rbind(df.now_casted, ldply(seq_along(dates), createNewInds, "estimate", ...)) %>% arrange(dt_sin)
   upper    = rbind(df.now_casted, ldply(seq_along(dates), createNewInds, "upper", ...)) %>% arrange(dt_sin)
   lower    = rbind(df.now_casted, ldply(seq_along(dates), createNewInds, "lower", ...)) %>% arrange(dt_sin)
   return(list(observed = df.now_casted, estimate = estimate, upper = upper, lower = lower))

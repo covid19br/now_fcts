@@ -1,5 +1,4 @@
-# funcao para gerar tabelas que vao para o site
-#' Title
+#' Funcao para gerar tabelas que vao para o site
 #'
 #' @param output.dir output.dir
 #' @param tipo tipo

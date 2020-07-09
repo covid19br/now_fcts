@@ -4,7 +4,7 @@
 #' @param UTI_stay_wait_fit fit
 #'
 #' @export
-fixUTIDates = function(x, UTI_stay_wait_fit){
+fixUTIDates <- function(x, UTI_stay_wait_fit){
   if(!is.na(x$UTI) & x$UTI==1 & is.na(x$dt_saiuti) & !is.na(x$evolucao))
     if(is.na(x$dt_evo)){
       x$dt_saiuti = as.Date(x$dt_entuti + rwaittime(1, UTI_stay_wait_fit))

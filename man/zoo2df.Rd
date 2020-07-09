@@ -2,7 +2,7 @@
 % Please edit documentation in R/zoo2df.R
 \name{zoo2df}
 \alias{zoo2df}
-\title{zoo2df}
+\title{zoo2df funcao para converter zoo em df}
 \usage{
 zoo2df(zoo)
 }
@@ -10,5 +10,5 @@ zoo2df(zoo)
 \item{zoo}{a zoo object}
 }
 \description{
-zoo2df
+zoo2df funcao para converter zoo em df
 }

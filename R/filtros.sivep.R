@@ -6,7 +6,7 @@
 #' @param remove.col Lógico. Se TRUE seleciona apenas colunas de datas usadas em nowcasting
 #'
 #' @importFrom dplyr filter select mutate
- #' @export
+#' @export
 #'
 filtros.sivep <- function(dados, tipo, hospitalizados, remove.col) {
 

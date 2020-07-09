@@ -11,7 +11,7 @@ write.nowcasting(now, output.dir, tipo = "covid", data)
 
 \item{output.dir}{output.dir}
 
-\item{tipo}{tipo}
+\item{tipo}{tipo de caso/obito: "covid", "srag", "obitos_covid", "obitos_srag"}
 
 \item{data}{data}
 }

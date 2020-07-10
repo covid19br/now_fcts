@@ -18,7 +18,7 @@ nowcasting.cumsum <- function(NobBS.posterior.output, NobBS.posterior.output.tra
     stop(paste("samples deve ter tamanho menor ou igual a", ncol(df)))
   else
     df<-NobBS.posterior.output$trajectories[,-1]
-  dates<-NobBS.posterior.output$trajectories$date
+  dates<-NobBS.posterior.output$estimates$onset_date
   df1<-df[,sample(ncol(df), samples)]
   df2<-apply(df1, 2, cumsum)
   data.frame(Dates = dates,

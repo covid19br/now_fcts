@@ -1,6 +1,6 @@
 #' Extrai a data mais recente de nowcasting por localidade
-#' @param adm unidade administrativa
 #'
+#' @param adm unidade administrativa
 #' @param sigla.adm sigla da unidade administrativa
 #' @param tipo covid, srag, obitos_covid, obitos_srag
 #'

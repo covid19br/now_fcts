@@ -19,14 +19,10 @@ check.geocode <- function(escala,
     nome <- "/pais/Brasil"
     return(nome)
   }
-  #url <- paste0("https://servicodados.ibge.gov.br/api/v1/localidades/municipios")
-  #df <- jsonlite::fromJSON(url)
-  #df$nome.nonascii <- gsub(" ", "_", textclean::replace_non_ascii(df$nome))
-  #df$nome.nonascii <- gsub("'", "", df$nome.nonascii)
-  #write.csv(df, "./dados/geocode_ibge.csv", row.names = FALSE)
+
   df <- geocode_ibge
-  #geocode <- as.numeric(geocode)
-  municipio.code <- sapply(df$id, function(x) substr(x, start = 1, stop = 6))
+
+  municipio.code <- geocode_ibge$municipio.code
   micro.code   <- df$microrregiao.id
   meso.code    <- df$microrregiao.mesorregiao.id
   estado.code  <- df$microrregiao.mesorregiao.UF.id

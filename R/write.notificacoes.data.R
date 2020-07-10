@@ -1,4 +1,4 @@
-#' Title
+#' Formata as tabelas de numero de casos por data de notificacao e sintomas
 #'
 #' @param dados dados
 #' @param output.dir output.dir

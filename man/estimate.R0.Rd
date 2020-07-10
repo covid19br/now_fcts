@@ -2,19 +2,23 @@
 % Please edit documentation in R/estimate.R0.R
 \name{estimate.R0}
 \alias{estimate.R0}
-\title{Estima R efetivo}
+\title{Estimating R accounting for uncertainty on the serial interval distribution}
 \usage{
 estimate.R0(novos.casos, day0 = 8, delay = 7, ...)
 }
 \arguments{
 \item{novos.casos}{vetor com novos casos}
 
-\item{day0}{dia zero}
+\item{day0}{day to start the analysis}
 
 \item{delay}{atraso}
 
 \item{...}{outros parâmetros}
 }
 \description{
-Estima R efetivo
+Estimating R accounting for uncertainty on the serial interval distribution
+}
+\details{
+The mean of the SI comes from a Normal(4.8, 0.71), truncated at 3.8 and 6.1
+the sd of the SI comes from  a Normal(2.3, 0.58), truncated at 1.6 and 3.5
 }

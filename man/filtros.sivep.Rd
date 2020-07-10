@@ -4,14 +4,16 @@
 \alias{filtros.sivep}
 \title{Title}
 \usage{
-filtros.sivep(dados, tipo, hospitalizados)
+filtros.sivep(dados, tipo, hospitalizados, remove.col)
 }
 \arguments{
 \item{dados}{df}
 
 \item{tipo}{covid, srag, obitos_covid, obitos_srag}
 
-\item{hospitalizados}{Logical. If TRUE filters only hosptalized cases}
+\item{hospitalizados}{Lógico. Se TRUE filtra apenas casos hospitalizados}
+
+\item{remove.col}{Lógico. Se TRUE seleciona apenas colunas de datas usadas em nowcasting}
 }
 \description{
 Title

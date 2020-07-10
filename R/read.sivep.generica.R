@@ -7,6 +7,8 @@
 #' @importFrom lubridate as_date parse_date_time
 #' @importFrom utils unzip count.fields
 #'
+#' @export
+#'
 read.sivep.generica <- function(file.name,
                        ...) {
   # lendo os dados

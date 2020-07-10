@@ -1,5 +1,5 @@
 Package: nowfcts
-Title: What the Package Does (One Line, Title Case)
+Title: Auxiliary functions for analyzing COVID-19 data from different sources
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "SRAG",

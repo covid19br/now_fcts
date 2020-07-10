@@ -4,7 +4,7 @@
 \name{nowfcts-package}
 \alias{nowfcts}
 \alias{nowfcts-package}
-\title{nowfcts: What the Package Does (One Line, Title Case)}
+\title{nowfcts: Auxiliary functions for analyzing COVID-19 data from different sources}
 \description{
 What the package does (one paragraph).
 }

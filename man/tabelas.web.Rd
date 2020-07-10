@@ -2,7 +2,7 @@
 % Please edit documentation in R/tabelas.web.R
 \name{tabelas.web}
 \alias{tabelas.web}
-\title{Title}
+\title{Funcao para gerar tabelas que vao para o site}
 \usage{
 tabelas.web(output.dir, tipo, df.cum, df.td, df.re = NULL, data_base)
 }
@@ -20,5 +20,5 @@ tabelas.web(output.dir, tipo, df.cum, df.td, df.re = NULL, data_base)
 \item{data_base}{data_base}
 }
 \description{
-Title
+Funcao para gerar tabelas que vao para o site
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.notificacoes.data.R
 \name{write.notificacoes.data}
 \alias{write.notificacoes.data}
-\title{Title}
+\title{Formata as tabelas de numero de casos por data de notificacao e sintomas}
 \usage{
 write.notificacoes.data(dados, output.dir, tipo = "covid", data)
 }
@@ -16,5 +16,5 @@ write.notificacoes.data(dados, output.dir, tipo = "covid", data)
 \item{data}{data}
 }
 \description{
-Title
+Formata as tabelas de numero de casos por data de notificacao e sintomas
 }

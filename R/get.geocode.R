@@ -8,9 +8,12 @@
 #' @export
 get.geocode <- function(nome_municipio,
                         nome_estado = NULL,
-                        sigla = NULL) {
+                        sigla = NULL,
+                        cifras = 7) {
  df <- geocode_ibge
- municipio.code <- sapply(df$id, function(x) substr(x, start = 1, stop = 6))
+ if (cifras == 6) municipio.code <- df$municipio.code
+ if (cifras == 7) municipio.code <- df$municipio.geocode
+
 
  nome <- textclean::replace_non_ascii(nome_municipio)
  nome <- gsub(" ", "_", nome)
@@ -27,6 +30,6 @@ get.geocode <- function(nome_municipio,
  geocode <- municipio.code[which(df$nome.nonascii == nome &
                                    df$microrregiao.mesorregiao.UF.nome == nome_estado)]
  }
- if (length(geocode) == 0) stop (paste("no geocode found for" , nome_municipio, sigla, nome_estado))
+ if (length(geocode) == 0) stop(paste("no geocode found for" , nome_municipio, sigla, nome_estado))
  else return(geocode)
 }

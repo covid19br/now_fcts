@@ -8,6 +8,7 @@
 #write.csv(df, "./dados/geocode_ibge.csv", row.names = FALSE)
 geocode_ibge <- read.csv("./data-raw/geocode_ibge.csv")
 geocode_ibge$municipio.code <- sapply(geocode_ibge$id, function(x) substr(x, start = 1, stop = 6))
+geocode_ibge$municipio.geocode <- sapply(geocode_ibge$id, function(x) substr(x, start = 1, stop = 7))
 
 #ainda nao se se precisa mesmo separar se já está lá
 micro.code   <- geocode_ibge$microrregiao.id

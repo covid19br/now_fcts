@@ -59,7 +59,9 @@ read.esus.generica  <- function(file.name,
   )
   #pega as linhas problemáticas
   index_prob <- problems(dados)$row
-  dados <- dados[-index_prob,]
+
+  #dados <- dados[-index_prob,]
+  #precisamos filtrar por linhas problemáticas sem ser index_prob - tipo checar se estados não está no vetor de estados
 
   dados <- data.frame(dados)
   # conveniencia mudando para minusculas

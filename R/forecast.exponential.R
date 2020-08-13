@@ -1,14 +1,23 @@
 #' Forecast usando regressão Poisson sobre série dos casos acumulados
-#'
-#' @param zoo.obj objeto zoo
-#' @param start inicio
-#' @param end fim
-#' @param days.forecast datas previsão
-#' @param ... ...
+#' @details Esta função ajusta uma regressão Poisson ao trecho final
+#'     de uma série temporal e em seguida usa esta regressão para
+#'     extrapolar a série para um certo de número de dias seguintes. A
+#'     projeção deve ser usada com cautela por se baseada em um ajuste
+#'     puramente estatístico, assumindo que (1) há uma relação inear
+#'     da série temporal com o tempo; (2) que a relação linear
+#'     ajustada se mantenah nos dias futuros para o qual é feita a
+#'     projeção.
+#' @param zoo.obj objeto zoo com série temporal acumulada
+#' @param start data inicial do trecho da série temporal à qual é
+#'     feito o ajuste da regressão Poisson
+#' @param end data final do trecho da série temporal à qual é feito o
+#'     ajuste da regressão Poisson.
+#' @param days.forecast inteiro, número de dias após o fim da série
+#'     para fazer a projeção.
 #'
 #' @export
 #' @importFrom stats predict
-forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.forecast, ...){
+forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.forecast){
     if(class(zoo.obj)!="zoo"|!is.null(dim(zoo.obj)))
         stop("'zoo.obj' deve ser um objeto da classe zoo com uma unica variavel")
     if(is.numeric(start))

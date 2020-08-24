@@ -3,6 +3,7 @@
 #' @param nome_municipio nome do municipio
 #' @param nome_estado nome do estado
 #' @param sigla sigla do estado
+#' @param cifras número de cifras do geocode do município, o valor predeterminado é 7 mas aceita 6
 #'
 #' @importFrom textclean replace_non_ascii
 #' @export

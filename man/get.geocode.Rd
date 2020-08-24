@@ -4,7 +4,7 @@
 \alias{get.geocode}
 \title{get geocode}
 \usage{
-get.geocode(nome_municipio, nome_estado = NULL, sigla = NULL)
+get.geocode(nome_municipio, nome_estado = NULL, sigla = NULL, cifras = 7)
 }
 \arguments{
 \item{nome_municipio}{nome do municipio}
@@ -12,6 +12,8 @@ get.geocode(nome_municipio, nome_estado = NULL, sigla = NULL)
 \item{nome_estado}{nome do estado}
 
 \item{sigla}{sigla do estado}
+
+\item{cifras}{número de cifras do geocode do município, o valor predeterminado é 7 mas aceita 6}
 }
 \description{
 get geocode

@@ -2,6 +2,7 @@
 #'
 #' @param file.name file name
 #' @param encoding encoding
+#' @param convert.dates logical, should date fields be converted to Date format?
 #' @param ... ...
 #'
 #' @importFrom readr read_delim guess_encoding problems

@@ -12,6 +12,7 @@
 #'
 read.esus.generica  <- function(file.name,
                                 encoding = NULL,
+                                convert.dates = TRUE,
                                 ...) {
 
   # detecta e lida com arquivo zip
@@ -72,15 +73,16 @@ read.esus.generica  <- function(file.name,
   if (is_zip)
     file.remove(file.name)
 
-
-  # formata datas
-  # muda nome de colunas e formata datas
-  dt.cols <- names(dados)[grepl("data", names(dados))]
-  #esusve: "datanotificacao"    "datainiciosintomas" "datanascimento"  "datateste"  "dataencerramento"
-  ## usa lubridate
-  dados[, dt.cols] <- lapply(dados[, dt.cols],
-                             function(x)
-                               as_date(parse_date_time(x, c("dmy", "ymd", "mdy", "dmy HMs", "ymd HMs"))))
+  if(convert.dates){ ## PI: permite nao manter as datas como strings (util para exportar para SQLite)
+      ## formata datas
+      ## muda nome de colunas e formata datas
+      dt.cols <- names(dados)[grepl("data", names(dados))]
+      ##esusve: "datanotificacao"    "datainiciosintomas" "datanascimento"  "datateste"  "dataencerramento"
+      ## usa lubridate
+      dados[, dt.cols] <- lapply(dados[, dt.cols],
+                                 function(x)
+                                     as_date(parse_date_time(x, c("dmy", "ymd", "mdy", "dmy HMs", "ymd HMs"))))
+      }
   dados$classificacaofinal <- gsub("Confirma.*", "Confirma", dados$classificacaofinal)
   return(dados)
 }

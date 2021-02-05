@@ -7,6 +7,7 @@
 #' @param trim.now corte para nowcasting
 #' @param window janela para nowcasting
 #' @param trajectories Lógico. Retorna trajetórias
+#' @param ... qualquer parâmetro da função NobBS para controlar o ajuste do nowcasting
 #'
 #' @export
 #'
@@ -19,8 +20,9 @@ gera.nowcasting <- function(dados, # dados
                             hospitalizados = TRUE,
                             trim.now, # corte para nowcasting
                             window, # janela para nowcasting
-                            trajectories = FALSE) { # retorna trajetórias
-  if(trajectories)
+                            trajectories = FALSE,
+                            ...) { # retorna trajetórias
+  if (trajectories)
       NobBS  <- NobBS.posterior
   # 1. nowcasting de casos ###
   if (caso) {
@@ -50,7 +52,8 @@ gera.nowcasting <- function(dados, # dados
         onset_date = "dt_sin_pri",
         report_date = "dt_pcr_dig",
         units = "1 day",
-        moving_window = window)
+        moving_window = window,
+        ...)
     } else {
      dados.now <- NULL
     }
@@ -85,7 +88,8 @@ gera.nowcasting <- function(dados, # dados
         report_date = "dt_encerra",
         units = "1 day",
         moving_window = window,
-        specs = list(beta.priors = dbinom(0:40, size = 40, prob = 15/50)))
+        specs = list(beta.priors = dbinom(0:40, size = 40, prob = 15/50)),
+        ...)
     } else {
       dados.now <- NULL
     }
